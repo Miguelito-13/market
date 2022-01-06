@@ -225,7 +225,7 @@
 
             </div><!-- icon Finish -->
 
-            <h3><a href="#">We Love you</a></h3>
+            <h3><a href="#">Lorem Ipsum</a></h3>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
@@ -243,7 +243,7 @@
 
             </div><!-- icon Finish -->
 
-            <h3><a href="#">We Love you</a></h3>
+            <h3><a href="#">Lorem Ipsum</a></h3>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
@@ -261,7 +261,7 @@
 
             </div><!-- icon Finish -->
 
-            <h3><a href="#">We Love you</a></h3>
+            <h3><a href="#">Lorem Ipsum</a></h3>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 

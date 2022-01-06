@@ -53,7 +53,7 @@
           <br/>Manila
           <br/>Cavite
           <br/>8700-12-34
-          <br/>realemail.gmail.com
+          <br/>real_email@gmail.com
           <br/><strong>Mr. Yoso</strong>
         </p>
 
