@@ -17,7 +17,7 @@
       <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
         <a href="#" class="btn btn-success btn-sm">Welcome to MarketPlace</a>
-        <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+        <a href="checkout.php">4 Items In Your Cart | Total Price: P300 </a>
                
       </div><!-- col-md-6 offer Finish -->
            
@@ -209,72 +209,222 @@
        
   </div><!-- container Finish -->
    
-  <div id="advantages">
+  <div id="advantages"><!-- advantages Start -->
 
-    <div class="container">
+    <div class="container"><!-- container Start -->
 
-      <div class="same-height-row">
+      <div class="same-height-row"><!-- same-height-row Start -->
 
-        <div class="col-sm-4">
+        <div class="col-sm-4"><!-- col-sm-4 Start -->
 
-          <div class="box same-height">
+          <div class="box same-height"><!-- box Start -->
 
-            <div class="icon">
-
-              <i class="fa fa-star"></i>
-
-            </div>
-
-            <h3><a href="#">We Love you</a></h3>
-
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-          </div>
-
-        </div>
-
-        <div class="col-sm-4">
-
-          <div class="box same-height">
-
-            <div class="icon">
+            <div class="icon"><!-- icon Start -->
 
               <i class="fa fa-star"></i>
 
-            </div>
+            </div><!-- icon Finish -->
 
             <h3><a href="#">We Love you</a></h3>
 
-            <p>We know you</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
-          </div>
+          </div><!-- box Finish -->
 
-        </div>
+        </div><!-- col-sm-4 Finish -->
 
-        <div class="col-sm-4">
+        <div class="col-sm-4"><!-- col-sm-4 Start -->
 
-          <div class="box same-height">
+          <div class="box same-height"><!-- box Start -->
 
-            <div class="icon">
+            <div class="icon"><!-- icon Start -->
 
               <i class="fa fa-star"></i>
 
-            </div>
+            </div><!-- icon Finish -->
 
             <h3><a href="#">We Love you</a></h3>
 
-            <p>We know you</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
-          </div>
+          </div><!-- box Finish -->
 
-        </div>
+        </div><!-- col-sm-4 Finish -->
 
+        <div class="col-sm-4"><!-- col-sm-4 Start -->
 
-      </div>
+          <div class="box same-height"><!-- box Start -->
 
-    </div>
+            <div class="icon"><!-- icon Start -->
 
-  </div> 
+              <i class="fa fa-star"></i>
+
+            </div><!-- icon Finish -->
+
+            <h3><a href="#">We Love you</a></h3>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+          </div><!-- box Finish -->
+
+        </div><!-- col-sm-4 Finish -->
+
+      </div><!-- container Finish -->
+
+    </div><!-- container Finish -->
+
+  </div><!-- advantages Finish -->
+
+  <div id="hot"><!-- hot Start -->
+
+    <div class="box"><!-- box Start -->
+
+      <div class="container"><!-- container Start -->
+
+        <div class="col-md-12"><!-- col-md-12 Start -->
+
+          <h2>Our Latest Product</h2>
+
+        </div><!-- col-md-12 Finish -->
+
+      </div><!-- container Finish -->
+
+    </div><!-- box Finish -->
+
+  </div><!-- hot Finish -->
+
+  <div id="content" class="container"><!-- container Start -->
+
+    <div class="row"><!-- row Start -->
+
+      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
+
+        <div class="product"><!-- product Start -->
+
+          <a href="details.php">
+
+            <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+
+          </a>
+
+          <div class="text"><!-- text Start -->
+
+            <h3>
+              <a href="details.php">Shirt for Women</a>
+            </h3>
+
+            <p class="price">P100</p>
+
+            <p class="button">
+              <a href="details.php" class="btn btn-default">View more</a>
+              <a href="details.php" class="btn btn-primary">
+                <i class="fa fa-shopping-cart">Add to Cart</i>
+              </a>
+            </p>
+
+          </div><!-- text Finish -->
+
+        </div><!-- product Finish -->
+
+      </div><!-- col-sm-4 Finish -->
+
+      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
+
+        <div class="product"><!-- product Start -->
+
+          <a href="details.php">
+
+            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+
+          </a>
+
+          <div class="text"><!-- text Start -->
+
+            <h3>
+              <a href="details.php">Shirt for Men</a>
+            </h3>
+
+            <p class="price">P100</p>
+
+            <p class="button">
+              <a href="details.php" class="btn btn-default">View more</a>
+              <a href="details.php" class="btn btn-primary">
+                <i class="fa fa-shopping-cart">Add to Cart</i>
+              </a>
+            </p>
+
+          </div><!-- text Finish -->
+
+        </div><!-- product Finish -->
+
+      </div><!-- col-sm-4 Finish -->
+
+      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
+
+        <div class="product"><!-- product Start -->
+
+          <a href="details.php">
+
+            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+
+          </a>
+
+          <div class="text"><!-- text Start -->
+
+            <h3>
+              <a href="details.php">Shirt for Men</a>
+            </h3>
+
+            <p class="price">P100</p>
+
+            <p class="button">
+              <a href="details.php" class="btn btn-default">View more</a>
+              <a href="details.php" class="btn btn-primary">
+                <i class="fa fa-shopping-cart">Add to Cart</i>
+              </a>
+            </p>
+
+          </div><!-- text Finish -->
+
+        </div><!-- product Finish -->
+
+      </div><!-- col-sm-4 Finish -->
+
+      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
+
+        <div class="product"><!-- product Start -->
+
+          <a href="details.php">
+
+            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+
+          </a>
+
+          <div class="text"><!-- text Start -->
+
+            <h3>
+              <a href="details.php">Shirt for Men</a>
+            </h3>
+
+            <p class="price">P100</p>
+
+            <p class="button">
+              <a href="details.php" class="btn btn-default">View more</a>
+              <a href="details.php" class="btn btn-primary">
+                <i class="fa fa-shopping-cart">Add to Cart</i>
+              </a>
+            </p>
+
+          </div><!-- text Finish -->
+
+        </div><!-- product Finish -->
+
+      </div><!-- col-sm-4 Finish -->
+
+    </div><!-- row Finish -->
+
+  </div><!-- container Finish -->
+
 
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
