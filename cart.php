@@ -79,13 +79,13 @@
             <li>
               <a href="index.php">Home</a>
             </li>
-            <li class="active">
+            <li>
               <a href="shop.php">Shop</a>
             </li>
             <li>
               <a href="checkout.php">My Account</a>
             </li>
-            <li>
+            <li class="active">
               <a href="cart.php">Shopping Cart</a>
             </li>
             <li>
@@ -157,175 +157,151 @@
             <a href="index.php">Home</a>
           </li>
           <li>
-            Shop
+            Cart
           </li>
         </ul>
 
       </div><!-- col-md-12 Finish -->
 
-      <div class="col-md-3"><!-- col-md-3 Start -->
+      <div id="cart" class="col-md-9"><!-- col-md-9 Start -->
 
-        <?php
-  
-          include("includes/sidebar.php")
+        <div class="box"><!-- box Start -->
 
-        ?>
+          <form action="cart.php" method="post" enctype="multipart/form-data">
 
-      </div><!-- col-md-3 Finish -->
+            <h1>Shopping Cart</h1>
+            <p class="text-muted">You currently have 3 items</p>
 
-      <div class="col-md-9"><!-- col-md-9 Start -->
+            <div class="table-responsive"><!-- table-responsive Start -->
 
-        <div id="productMain" class="row"><!-- row Start -->
+              <table class="table">
 
-          <div class="col-sm-6"><!-- col-sm-6 Start -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Product</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Size</th>
+                    <th colspan="1">Delete</th>
+                    <th colspan="2">Sub-Total</th>
+                  </tr>
+                </thead>
 
-            <div id="mainImage"><!-- mainImage Start -->
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
+                    </td>
+                    <td><!-- Product -->
+                      <a href="#">Shirt</a>
+                    </td>
+                    <td><!-- Quantity -->
+                      2
+                    </td>
+                    <td><!-- Price -->
+                      P200
+                    </td>
+                    <td><!-- Size -->
+                      Large
+                    </td>
+                    <td><!-- Delete -->
+                      <input type="checkbox" name="remove[]">
+                    </td>
+                    <td>
+                      P400
+                    </td>
+                  </tr>
+                </tbody>
 
-              <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel Start -->
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
+                    </td>
+                    <td><!-- Product -->
+                      <a href="#">Shirt</a>
+                    </td>
+                    <td><!-- Quantity -->
+                      2
+                    </td>
+                    <td><!-- Price -->
+                      P200
+                    </td>
+                    <td><!-- Size -->
+                      Large
+                    </td>
+                    <td><!-- Delete -->
+                      <input type="checkbox" name="remove[]">
+                    </td>
+                    <td>
+                      P400
+                    </td>
+                  </tr>
+                </tbody>
 
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
+                    </td>
+                    <td><!-- Product -->
+                      <a href="#">Shirt</a>
+                    </td>
+                    <td><!-- Quantity -->
+                      2
+                    </td>
+                    <td><!-- Price -->
+                      P200
+                    </td>
+                    <td><!-- Size -->
+                      Large
+                    </td>
+                    <td><!-- Delete -->
+                      <input type="checkbox" name="remove[]">
+                    </td>
+                    <td><!-- Subtotal -->
+                      P400
+                    </td>
+                  </tr>
+                </tbody>
 
-                <div class="carousel-inner"><!-- carousel-inner Start -->
+                <tfoot>
+                  <tr>
+                    <th colspan="5">Total</th>
+                    <th colspan="2">P1200</th>
+                  </tr>
+                </tfoot>
 
-                  <div class="item active"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product1"></center>
-                  </div><!-- item Finish -->
+              </table>
 
-                  <div class="item"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"></center>
-                  </div><!-- item Finish -->
+            </div><!-- table-responsive Finish -->
 
-                  <div class="item"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 3"></center>
-                  </div><!-- item Finish -->
+            <div class="box-footer"><!-- box-footer Start -->
 
-                </div><!-- carousel-inner Finish -->
+              <div class="pull-left"><!-- pull-left Start -->
 
-                <a href="#myCarousel" class="left carousel-control" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
+                <a href="index.php" class="btn btn-default">
+                  <i class="fa fa-chevron-left"></i> Continue Shopping
                 </a>
 
-                <a href="#myCarousel" class="right carousel-control" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
+              </div><!-- pull-left Finish -->
+
+              <div class="pull-right"><!-- pull-left Start -->
+
+                <button type="submit" name="update" value="Update Cart" class="btn btn-default">
+                  <i class="fa fa-refresh"></i> Update Cart
+                </button>
+
+                <a href="checkout.php" class="btn btn-primary">
+                  Proceed Checkout 
+                  <i class="fa fa-chevron-right"></i>
                 </a>
 
-                <span class="glyphicon glyphicon-cevron-left"></span>
+              </div><!-- pull-left Finish -->
 
-              </div><!-- carousel Finish -->
+            </div><!-- box-footer Finish -->
 
-            </div><!-- mainImage Finish -->
-
-          </div><!-- col-sm-6 Finish -->
-
-          <div class="col-sm-6"><!-- col-sm-6 Start -->
-
-            <div class="box"><!-- box Start -->
-
-              <h1 class="text-center">Shirt</h1>
-
-              <form action="" class="form-horizontal" method="post"><!-- form Start -->
-
-                <div class="form-group"><!-- form-group Start -->
-
-                  <label for="" class="col-md-5 control-label">Product Quantity</label>
-
-                  <div class="col-md-7"><!-- col-md-7 Start -->
-
-                    <select name="product_qty" id="" class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-
-                  </div><!-- col-md-7 Finish -->
-
-                </div><!-- form-group Finish -->
-
-                <div class="form-group"><!-- form-group Start -->
-
-                <label class="col-md-5 control-label">Product Size</label>
-
-                  <div class="col-md-7"><!-- col-md-7 Start -->
-
-                    <select name="product_size" id="" class="form-control">
-                      <option>Select a Size</option>
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
-                    </select>
-
-                  </div><!-- col-md-7 Finish -->
-
-                </div><!-- form-group Finish -->
-
-                <p>P200</p>
-
-                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to Cart</button></p>
-
-              </form><!-- form Finish -->
-
-            </div><!-- box Finish -->
-
-
-            <div class="row" id="thumbs"><!-- row Start -->
-
-              <div class="col-xs-4"><!-- col-xs-4 Start -->
-
-                <a  data-target="#myCarousel" data-slide-to="0" href="" class="thumb">
-                  <img src="admin_area/product_images/product-1.jpg" alt="product 1" class="img-responsive">
-                </a>
-
-              </div><!-- col-xs-4 Finish -->
-
-              <div class="col-xs-4"><!-- col-xs-4 Start -->
-
-                <a  data-target="#myCarousel" data-slide-to="1" href="" class="thumb">
-                  <img src="admin_area/product_images/product-2.jpg" alt="product 2" class="img-responsive">
-                </a>
-
-              </div><!-- col-xs-4 Finish -->
-
-              <div class="col-xs-4"><!-- col-xs-4 Start -->
-
-                <a  data-target="#myCarousel" data-slide-to="2" href="" class="thumb">
-                  <img src="admin_area/product_images/product-1.jpg" alt="product 3" class="img-responsive">
-                </a>
-
-              </div><!-- col-xs-4 Finish -->
-
-            </div><!-- row Finish -->
-
-          </div><!-- col-sm-6 Finish -->
-
-        </div><!-- row Finish -->
-
-        <div class="box" id="details"><!-- box Start -->
-
-          <h4>Product Details</h4>
-
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est repellendus quaerat nisi quibusdam adipisci dicta harum? Corporis officia amet ducimus aliquid quisquam pariatur laboriosam, nesciunt asperiores adipisci neque id rerum.
-          </p>
-
-          <h4>Size</h4>
-
-          <ul>
-            <li>Small</li>
-            <li>Medium</li>
-            <li>Large</li>
-          <li>Extra Large</li>
-          </ul>
-
-          <hr>
+          </form>
 
         </div><!-- box Finish -->
 
@@ -396,19 +372,67 @@
 
       </div><!-- col-md-9 Finish -->
 
+      <div class="col-md-3"><!-- col-md-3 Start -->
+
+        <div id="order-summary" class="box"><!-- box Start -->
+
+          <div class="box-header"><!-- box-header Start -->
+
+            <h3>Order Summary</h3>
+
+            <p class="text-muted">
+              Shipping and additional costs are calculated based on value you have entered
+            </p>
+
+            <div class="table-responsive"><!-- table-responsive Start -->
+
+              <table class="table">
+
+                <tbody>
+                  <tr>
+                    <td> Order Sub-Total </td>
+                    <th> P1200 </th>
+                  </tr>
+
+                  <tr>
+                    <td> Shipping and Handling </td>
+                    <th> P0 </th>
+                  </tr>
+
+                  <tr>
+                    <td> Tax </td>
+                    <th> P0 </th>
+                  </tr>
+
+                  <tr class="total">
+                    <td> Total </td>
+                    <th> P1200 </th>
+                  </tr>
+                </tbody>
+
+              </table>
+
+            </div><!-- table-responsive Finish -->
+
+          </div><!-- box-header Finish -->
+
+        </div><!-- box Finish -->
+
+      </div><!-- col-md-3 Finish -->
+
     </div><!-- container Finish -->
 
   </div><!-- content Finish -->
 
   <?php
-  
+
     include("includes/footer.php")
 
   ?>
 
-    <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>
-    
-    
+  <script src="js/jquery-331.min.js"></script>
+  <script src="js/bootstrap-337.min.js"></script>
+  
+  
 </body>
 </html>
