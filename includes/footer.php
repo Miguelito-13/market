@@ -49,7 +49,7 @@
         <h4>Find Us:</h4>
 
         <p>
-          <strong>Fake Axie Inc.</strong>
+          <strong>Bootleg Inc.</strong>
           <br/>Manila
           <br/>Cavite
           <br/>8700-12-34
@@ -111,7 +111,7 @@
 
     <div class="col-md-6"><!-- col-md-6 Start -->
 
-      <p class="pull-left">&copy; 2022 Fake Axie Inc. All Rights Reserved</p>
+      <p class="pull-left">&copy; 2022 Bootleg Inc. All Rights Reserved</p>
 
     </div><!-- col-md-6 Finish -->
 
