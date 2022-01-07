@@ -1,4 +1,4 @@
-<div class="panel panel-default sidebar-manu"><!-- panel Start -->
+<div class="panel panel-default sidebar-menu"><!-- panel Start -->
 
   <div class="panel-heading"><!-- panel-heading Start -->
 
@@ -22,7 +22,7 @@
 
 </div><!-- panel Finish -->
 
-<div class="panel panel-default sidebar-manu"><!-- panel Start -->
+<div class="panel panel-default sidebar-menu"><!-- panel Start -->
 
   <div class="panel-heading"><!-- panel-heading Start -->
 
