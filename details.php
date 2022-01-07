@@ -322,7 +322,7 @@
             <li>Small</li>
             <li>Medium</li>
             <li>Large</li>
-          <li>Extra Large</li>
+            <li>Extra Large</li>
           </ul>
 
           <hr>
