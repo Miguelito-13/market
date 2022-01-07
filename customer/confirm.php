@@ -26,13 +26,13 @@
         <ul class="menu">
                    
           <li>
-            <a href="customer_register.php">Register</a>
+            <a href="../customer_register.php">Register</a>
           </li>
           <li>
-            <a href="customer/my_account.php">My Account</a>
+            <a href="my_account.php">My Account</a>
           </li>
           <li>
-            <a href="cart.php">Go To Cart</a>
+            <a href="../cart.php">Go To Cart</a>
           </li>
           <li>
             <a href="checkout.php">Login</a>
@@ -77,19 +77,19 @@
           <ul class="nav navbar-nav left"><!-- nav navbar-nav left Begin -->
                        
             <li>
-              <a href="index.php">Home</a>
+              <a href="../index.php">Home</a>
+            </li>
+            <li>
+              <a href="../shop.php">Shop</a>
             </li>
             <li class="active">
-              <a href="shop.php">Shop</a>
+              <a href="my_account.php">My Account</a>
             </li>
             <li>
-              <a href="customer/my_account.php">My Account</a>
+              <a href="../cart.php">Shopping Cart</a>
             </li>
             <li>
-              <a href="cart.php">Shopping Cart</a>
-            </li>
-            <li>
-              <a href="contact.php">Contact Us</a>
+              <a href="../contact.php">Contact Us</a>
             </li>
                        
           </ul><!-- nav navbar-nav left Finish -->
@@ -157,7 +157,7 @@
             <a href="index.php">Home</a>
           </li>
           <li>
-            Shop
+            My Account
           </li>
         </ul>
 
@@ -177,168 +177,83 @@
 
         <div class="box"><!-- box Start -->
 
-          <h1>Shop</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptates rerum inventore exercitationem velit, beatae voluptatibus doloribus ea excepturi doloremque, non est. Voluptatibus provident sequi amet sunt quo. Provident, aliquam?</p>
+          <h1 align="center"> Please confirm your payment </h1>
+
+          <form action="confirm.php" method="post" enctype="multipart/form-data">
+
+            <div class="form-group"><!-- form-group Start -->
+
+              <label> Invoice No: </label>
+
+              <input type="text" class="form-control" name="invoice_no" required>
+
+            </div><!-- form-group Finish -->
+
+            <div class="form-group"><!-- form-group Start -->
+
+              <label> Amount Sent: </label>
+
+              <input type="text" class="form-control" name="amount_sent" required>
+
+            </div><!-- form-group Finish -->
+
+            <div class="form-group"><!-- form-group Start -->
+
+              <label> Select Payment Method: </label>
+
+              <select name="payment_mode" class="form-control">
+                <option>Select Payment Method</option>
+                <option> PayMaya</option>
+                <option> GCash</option>
+                <option> Western Union</option>
+                <option> PayPal</option>
+              </select>
+
+            </div><!-- form-group Finish -->
+
+            <div class="form-group"><!-- form-group Start -->
+
+              <label> Transaction / Reference ID: </label>
+
+              <input type="text" class="form-control" name="ref_no" required>
+
+            </div><!-- form-group Finish -->
+
+            <div class="form-group"><!-- form-group Start -->
+
+              <label> Payment Date: </label>
+
+              <input type="text" class="form-control" name="date" required>
+
+            </div><!-- form-group Finish -->
+
+            <div class="text-center"><!-- text-center Start -->
+
+              <button class="btn btn-primary btn-lg">
+                <i class="fa fa-user-md"> Confirm Payment</i>
+              </button>
+            
+            </div><!-- text-center Finish -->
+
+          </form>
 
         </div><!-- box Finish -->
-
-        <div class="row"><!-- row Start -->
-
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
-
-            <div class="product"><!-- product Start -->
-
-              <a href="details.php">
-
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
-
-            <div class="product"><!-- product Start -->
-
-              <a href="details.php">
-
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
-
-            <div class="product"><!-- product Start -->
-
-              <a href="details.php">
-
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
-
-            <div class="product"><!-- product Start -->
-
-              <a href="details.php">
-
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-        </div><!-- box Finish -->
-
-        <center>
-
-          <ul class="pagination">
-            <li><a href="#">First Page</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Last Page</a></li>
-          </ul>
-
-        </center>
 
       </div><!-- col-md-9 Finish -->
-
+      
     </div><!-- container Finish -->
 
   </div><!-- content Finish -->
 
   <?php
-  
+
     include("includes/footer.php")
 
   ?>
 
-    <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>
-    
-    
+  <script src="js/jquery-331.min.js"></script>
+  <script src="js/bootstrap-337.min.js"></script>
+
+
 </body>
 </html>
