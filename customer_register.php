@@ -249,7 +249,7 @@
               <div class="form-group"><!-- form-group Start -->
 
                 <label>Profile Picture </label>
-                <input type="file" class="form-control" name="c_image" required>
+                <input type="file" class="form-control" name="c_image">
 
               </div><!-- form-group Finish -->
 

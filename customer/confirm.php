@@ -207,6 +207,7 @@
                 <option> GCash</option>
                 <option> Western Union</option>
                 <option> PayPal</option>
+                <option> Cash on Delivery</option>
               </select>
 
             </div><!-- form-group Finish -->
