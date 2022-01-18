@@ -1,6 +1,7 @@
 <?php 
 
   include("includes/db.php");
+  include("functions/functions.php");
 
 ?>
 
@@ -317,129 +318,11 @@
 
     <div class="row"><!-- row Start -->
 
-      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
+      <?php
+      
+        getPro();
 
-        <div class="product"><!-- product Start -->
-
-          <a href="details.php">
-
-            <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-          </a>
-
-          <div class="text"><!-- text Start -->
-
-            <h3>
-              <a href="details.php">Shirt for Women</a>
-            </h3>
-
-            <p class="price">P100</p>
-
-            <p class="button">
-              <a href="details.php" class="btn btn-default">View more</a>
-              <a href="details.php" class="btn btn-primary">
-                <i class="fa fa-shopping-cart">Add to Cart</i>
-              </a>
-            </p>
-
-          </div><!-- text Finish -->
-
-        </div><!-- product Finish -->
-
-      </div><!-- col-sm-4 Finish -->
-
-      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
-
-        <div class="product"><!-- product Start -->
-
-          <a href="details.php">
-
-            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
-
-          </a>
-
-          <div class="text"><!-- text Start -->
-
-            <h3>
-              <a href="details.php">Shirt for Men</a>
-            </h3>
-
-            <p class="price">P100</p>
-
-            <p class="button">
-              <a href="details.php" class="btn btn-default">View more</a>
-              <a href="details.php" class="btn btn-primary">
-                <i class="fa fa-shopping-cart">Add to Cart</i>
-              </a>
-            </p>
-
-          </div><!-- text Finish -->
-
-        </div><!-- product Finish -->
-
-      </div><!-- col-sm-4 Finish -->
-
-      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
-
-        <div class="product"><!-- product Start -->
-
-          <a href="details.php">
-
-            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
-
-          </a>
-
-          <div class="text"><!-- text Start -->
-
-            <h3>
-              <a href="details.php">Shirt for Men</a>
-            </h3>
-
-            <p class="price">P100</p>
-
-            <p class="button">
-              <a href="details.php" class="btn btn-default">View more</a>
-              <a href="details.php" class="btn btn-primary">
-                <i class="fa fa-shopping-cart">Add to Cart</i>
-              </a>
-            </p>
-
-          </div><!-- text Finish -->
-
-        </div><!-- product Finish -->
-
-      </div><!-- col-sm-4 Finish -->
-
-      <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 Start -->
-
-        <div class="product"><!-- product Start -->
-
-          <a href="details.php">
-
-            <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
-
-          </a>
-
-          <div class="text"><!-- text Start -->
-
-            <h3>
-              <a href="details.php">Shirt for Men</a>
-            </h3>
-
-            <p class="price">P100</p>
-
-            <p class="button">
-              <a href="details.php" class="btn btn-default">View more</a>
-              <a href="details.php" class="btn btn-primary">
-                <i class="fa fa-shopping-cart">Add to Cart</i>
-              </a>
-            </p>
-
-          </div><!-- text Finish -->
-
-        </div><!-- product Finish -->
-
-      </div><!-- col-sm-4 Finish -->
+      ?>
 
     </div><!-- row Finish -->
 
