@@ -34,151 +34,121 @@
 
       <div class="col-md-9"><!-- col-md-9 Start -->
 
-        <div class="box"><!-- box Start -->
+        <?php 
 
-          <h1>Shop</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptates rerum inventore exercitationem velit, beatae voluptatibus doloribus ea excepturi doloremque, non est. Voluptatibus provident sequi amet sunt quo. Provident, aliquam?</p>
+          if(!isset($_GET['p_cat'])){
 
-        </div><!-- box Finish -->
+            if(!isset($_GET['cat'])){
+
+              echo "
+
+              <div class='box'><!-- box Start -->
+
+                <h1>Shop</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptates rerum inventore exercitationem velit, beatae voluptatibus doloribus ea excepturi doloremque, non est. Voluptatibus provident sequi amet sunt quo. Provident, aliquam?</p>
+
+              </div><!-- box Finish -->
+
+              ";
+
+            }
+
+          }
+
+        ?>
 
         <div class="row"><!-- row Start -->
 
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
+          <?php 
 
-            <div class="product"><!-- product Start -->
+            if(!isset($_GET['p_cat'])){
 
-              <a href="details.php">
+              if(!isset($_GET['cat'])){
 
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                $per_page = 6;
 
-              </a>
+                if(isset($_GET['page'])){
+                  
+                  $page = $_GET['page'];
 
-              <div class="text"><!-- text Start -->
+                }else{
 
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
+                  $page = 1;
+                  
+                  $start_from = ($page-1) * $per_page;
 
-                <p class="price">P100</p>
+                  $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
 
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
+                  $run_products = mysqli_query($conn,$get_products);
 
-              </div><!-- text Finish -->
+                  while($row_products=mysqli_fetch_array($run_products)){
 
-            </div><!-- product Finish -->
+                    $pro_id = $row_products['product_id'];
 
-          </div><!-- col-md-4 Finish -->
+                    $pro_name = $row_products['product_name'];
 
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
+                    $pro_price = $row_products['product_price'];
 
-            <div class="product"><!-- product Start -->
+                    $pro_img1 = $row_products['product_img1'];
 
-              <a href="details.php">
+                    echo "
+                    
+                      <div class='col-md-4 col-sm-6 center-responsive'>
 
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                        <div class='product'>
 
-              </a>
+                          <a href='details.php?pro_id=$pro_id'> 
+                          
+                            <img class='img-responsive' src='admin_area/product_images/$pro_img1'></img> 
+                          
+                          </a>
 
-              <div class="text"><!-- text Start -->
+                          <div class='text'>
+                          
+                            <h3> <a href='details.php?pro_id=$pro_id'>$pro_name</a> </h3>
+                          
+                            <p class='price'>P$pro_price</p>
 
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
+                            <p class='button'>
+                            
+                              <a class='btn btn-default' href='details.php?pro_id=$pro_id'> View Details </a>
 
-                <p class="price">P100</p>
+                              <a class='btn btn-primary' href='details.php?pro_id=$pro_id'> 
+                              
+                                <i class='fa fa-shopping-cart'></i> Add to Cart 
+                              
+                              </a>
 
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
+                            </p>
 
-              </div><!-- text Finish -->
+                          </div>
 
-            </div><!-- product Finish -->
+                        </div>
 
-          </div><!-- col-md-4 Finish -->
+                      </div>
+                    
+                    ";
 
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
+                  }
 
-            <div class="product"><!-- product Start -->
+                }
 
-              <a href="details.php">
+          ?>
 
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-          <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 Start -->
-
-            <div class="product"><!-- product Start -->
-
-              <a href="details.php">
-
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-              </a>
-
-              <div class="text"><!-- text Start -->
-
-                <h3>
-                  <a href="details.php">Shirt for Women</a>
-                </h3>
-
-                <p class="price">P100</p>
-
-                <p class="button">
-                  <a href="details.php" class="btn btn-default">View more</a>
-                  <a href="details.php" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart">Add to Cart</i>
-                  </a>
-                </p>
-
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-4 Finish -->
-
-        </div><!-- box Finish -->
+        </div><!-- row Finish -->
 
         <center>
 
           <ul class="pagination">
-            <li><a href="#">First Page</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Last Page</a></li>
+            
+            <?php
+            
+                }
+
+              }
+
+            ?>
+  
           </ul>
 
         </center>

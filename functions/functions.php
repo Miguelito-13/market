@@ -77,4 +77,60 @@
 
   }
 
+
+  function getPCats(){
+
+    global $db;
+    
+    $get_p_cats = "select * from product_categories";
+
+    $run_p_cats = mysqli_query($db, $get_p_cats);
+
+    while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+      $p_cat_id = $row_p_cats['p_cat_id'];
+
+      $p_cat_name = $row_p_cats['p_cat_name'];
+
+      echo "
+      
+        <li>
+        
+          <a href='shop.php?p_cat=$p_cat_id'> $p_cat_name</a>
+        
+        </li>
+      
+      ";
+
+    }
+
+  }
+
+
+  function getCats(){
+
+    global $db;
+    
+    $get_cats = "select * from categories";
+
+    $run_cats = mysqli_query($db, $get_cats);
+
+    while($row_cats=mysqli_fetch_array($run_cats)){
+      $cat_id = $row_cats['cat_id'];
+
+      $cat_name = $row_cats['cat_name'];
+
+      echo "
+      
+        <li>
+        
+          <a href='shop.php?cat=$cat_id'> $cat_name</a>
+        
+        </li>
+      
+      ";
+
+    }
+
+  }
+
 ?>
