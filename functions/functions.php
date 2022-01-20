@@ -152,7 +152,7 @@
 
       $p_cat_desc = $row_p_cat['p_cat_desc'];
 
-      $get_products = "select * from products where p_cat_id='$p_cat_id'";
+      $get_products = "select * from products where p_cat_id='$p_cat_id' LIMIT 0,6";
 
       $run_products = mysqli_query($db,$get_products);
       
@@ -274,7 +274,7 @@
 
       $cat_desc = $row_cat['cat_desc'];
 
-      $get_cat = "select * from products where cat_id='$cat_id'";
+      $get_cat = "select * from products where cat_id='$cat_id' LIMIT 0,6";
 
       $run_products = mysqli_query($db,$get_cat);
 

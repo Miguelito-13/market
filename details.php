@@ -1,5 +1,6 @@
 <?php
 
+  $active='Cart';
   include("includes/header.php");
 
 ?>
@@ -16,6 +17,12 @@
           </li>
           <li>
             Shop
+          </li>
+          <li>
+            <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_name; ?></a>
+          </li>
+          <li>
+            <?php echo $pro_name ?>
           </li>
         </ul>
 
@@ -50,15 +57,15 @@
                 <div class="carousel-inner"><!-- carousel-inner Start -->
 
                   <div class="item active"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product1"></center>
+                    <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product1"></center>
                   </div><!-- item Finish -->
 
                   <div class="item"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"></center>
+                    <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt="Product 2"></center>
                   </div><!-- item Finish -->
 
                   <div class="item"><!-- item Start -->
-                    <center><img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 3"></center>
+                    <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img3; ?>" alt="Product 3"></center>
                   </div><!-- item Finish -->
 
                 </div><!-- carousel-inner Finish -->
@@ -85,9 +92,9 @@
 
             <div class="box"><!-- box Start -->
 
-              <h1 class="text-center">Shirt</h1>
+              <h1 class="text-center"><?php echo $pro_name; ?></h1>
 
-              <form action="" class="form-horizontal" method="post"><!-- form Start -->
+              <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post"><!-- form Start -->
 
                 <div class="form-group"><!-- form-group Start -->
 
@@ -125,7 +132,7 @@
 
                 </div><!-- form-group Finish -->
 
-                <p class="price">P200</p>
+                <p class="price">P<?php echo $pro_price; ?></p>
 
                 <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to Cart</button></p>
 
@@ -139,7 +146,7 @@
               <div class="col-xs-4"><!-- col-xs-4 Start -->
 
                 <a  data-target="#myCarousel" data-slide-to="0" href="" class="thumb">
-                  <img src="admin_area/product_images/product-1.jpg" alt="product 1" class="img-responsive">
+                  <img src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="product 1" class="img-responsive">
                 </a>
 
               </div><!-- col-xs-4 Finish -->
@@ -147,7 +154,7 @@
               <div class="col-xs-4"><!-- col-xs-4 Start -->
 
                 <a  data-target="#myCarousel" data-slide-to="1" href="" class="thumb">
-                  <img src="admin_area/product_images/product-2.jpg" alt="product 2" class="img-responsive">
+                  <img src="admin_area/product_images/<?php echo $pro_img2; ?>" alt="product 2" class="img-responsive">
                 </a>
 
               </div><!-- col-xs-4 Finish -->
@@ -155,7 +162,7 @@
               <div class="col-xs-4"><!-- col-xs-4 Start -->
 
                 <a  data-target="#myCarousel" data-slide-to="2" href="" class="thumb">
-                  <img src="admin_area/product_images/product-1.jpg" alt="product 3" class="img-responsive">
+                  <img src="admin_area/product_images/<?php echo $pro_img3; ?>" alt="product 3" class="img-responsive">
                 </a>
 
               </div><!-- col-xs-4 Finish -->
@@ -171,7 +178,7 @@
           <h4>Product Details</h4>
 
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est repellendus quaerat nisi quibusdam adipisci dicta harum? Corporis officia amet ducimus aliquid quisquam pariatur laboriosam, nesciunt asperiores adipisci neque id rerum.
+            <?php echo $pro_desc; ?>
           </p>
 
           <h4>Size</h4>
@@ -197,58 +204,52 @@
 
             </div><!-- box Start -->
 
-          </div><!-- col-md-3 Start -->
-
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
-
-            <div class="product same-height"><!-- product Start -->
-
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 2">
-              </a>
-
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
-
-            </div><!-- product Finish -->
-
           </div><!-- col-md-3 Finish -->
 
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
+          <?php 
+          
+            $get_products = "select * from products order by 1 DESC LIMIT 0,3";
 
-            <div class="product same-height"><!-- product Start -->
+            $run_products = mysqli_query($conn,$get_products);
 
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 2">
-              </a>
+            while($row_products=mysqli_fetch_array($run_products)){
+              $pro_id = $row_products['product_id'];
 
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
+              $pro_name = $row_products['product_name'];
 
-            </div><!-- product Finish -->
+              $pro_img1 = $row_products['product_img1'];
 
-          </div><!-- col-md-3 Finish -->
+              $pro_price = $row_products['product_price'];
 
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
+              echo "
+              
+                <div class='col-md-3 col-sm-6 center-responsive'>
+                
+                  <div class='product same-height'>
+                  
+                    <a href='details.php?pro_id=$pro_id'>
+                    
+                      <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
 
-            <div class="product same-height"><!-- product Start -->
+                    </a>
 
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="product 2">
-              </a>
+                    <div class='text'>
+                    
+                      <h3> <a href='details.php?pro_id=$pro_id'> $pro_name </a> </h3>
 
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
+                      <p class='price'> P $pro_price </p>
+                    
+                    </div>
 
-            </div><!-- product Finish -->
+                  </div>
+                
+                </div>
 
-          </div><!-- col-md-3 Finish -->
+              ";
+
+            }
+          
+          ?>
 
         </div><!-- row Finish -->
 
