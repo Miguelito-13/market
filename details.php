@@ -94,7 +94,9 @@
 
               <h1 class="text-center"><?php echo $pro_name; ?></h1>
 
-              <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post"><!-- form Start -->
+              <?php add_cart(); ?>
+
+              <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"><!-- form Start -->
 
                 <div class="form-group"><!-- form-group Start -->
 
@@ -120,13 +122,13 @@
 
                   <div class="col-md-7"><!-- col-md-7 Start -->
 
-                    <select name="product_size" id="" class="form-control">
-                      <option>Select a Size</option>
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
-                    </select>
+                  <select name="product_size" class="form-control" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')">
+                    <option disabled selected>Select a Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                  </select>
 
                   </div><!-- col-md-7 Finish -->
 
@@ -208,7 +210,7 @@
 
           <?php 
           
-            $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+            $get_products = "select * from products order by rand() LIMIT 0,3";
 
             $run_products = mysqli_query($conn,$get_products);
 
