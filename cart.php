@@ -29,7 +29,20 @@
           <form action="cart.php" method="post" enctype="multipart/form-data">
 
             <h1>Shopping Cart</h1>
-            <p class="text-muted">You currently have 3 items</p>
+
+            <?php 
+            
+              $ip_add = getRealIpUser();
+
+              $select_cart = "select * from cart where ip_add='$ip_add'";
+
+              $run_cart = mysqli_query($conn,$select_cart);
+
+              $count = mysqli_num_rows($run_cart);
+            
+            ?>
+
+            <p class="text-muted">You currently have <?php echo $count; ?> item(s)</p>
 
             <div class="table-responsive"><!-- table-responsive Start -->
 
@@ -47,87 +60,74 @@
                 </thead>
 
                 <tbody>
-                  <tr>
-                    <td>
-                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
-                    </td>
-                    <td><!-- Product -->
-                      <a href="#">Shirt</a>
-                    </td>
-                    <td><!-- Quantity -->
-                      2
-                    </td>
-                    <td><!-- Price -->
-                      P200
-                    </td>
-                    <td><!-- Size -->
-                      Large
-                    </td>
-                    <td><!-- Delete -->
-                      <input type="checkbox" name="remove[]">
-                    </td>
-                    <td>
-                      P400
-                    </td>
-                  </tr>
-                </tbody>
 
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
-                    </td>
-                    <td><!-- Product -->
-                      <a href="#">Shirt</a>
-                    </td>
-                    <td><!-- Quantity -->
-                      2
-                    </td>
-                    <td><!-- Price -->
-                      P200
-                    </td>
-                    <td><!-- Size -->
-                      Large
-                    </td>
-                    <td><!-- Delete -->
-                      <input type="checkbox" name="remove[]">
-                    </td>
-                    <td>
-                      P400
-                    </td>
-                  </tr>
-                </tbody>
+                  <?php 
+                  
+                    $total = 0;
 
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 1">
-                    </td>
-                    <td><!-- Product -->
-                      <a href="#">Shirt</a>
-                    </td>
-                    <td><!-- Quantity -->
-                      2
-                    </td>
-                    <td><!-- Price -->
-                      P200
-                    </td>
-                    <td><!-- Size -->
-                      Large
-                    </td>
-                    <td><!-- Delete -->
-                      <input type="checkbox" name="remove[]">
-                    </td>
-                    <td><!-- Subtotal -->
-                      P400
-                    </td>
-                  </tr>
+                    while($row_cart=mysqli_fetch_array($run_cart)){
+
+                      $pro_id = $row_cart['p_id'];
+
+                      $pro_size = $row_cart['size'];
+
+                      $pro_qty = $row_cart['qty'];
+
+                      $get_products = "select * from products where product_id='$pro_id'";
+
+                      $run_products = mysqli_query($conn,$get_products);
+
+                      while($row_products=mysqli_fetch_array($run_products)){
+
+                        $product_name = $row_products['product_name'];
+
+                        $product_img1 = $row_products['product_img1'];
+
+                        $only_price = $row_products['product_price'];
+
+                        $sub_total = $row_products['product_price'] * $pro_qty;
+
+                        $total += $sub_total;
+                  
+                  ?>
+
+                        <tr>
+                          <td>
+                            <img class="img-responsive" src="admin_area/product_images/<?php echo $product_img1; ?>" alt="product 1">
+                          </td>
+                          <td><!-- Product -->
+                            <a href="details.php?pro_id=<?php echo $pro_id;?>"><?php echo $product_name; ?></a>
+                          </td>
+                          <td><!-- Quantity -->
+                            <?php echo $pro_qty; ?>
+                          </td>
+                          <td><!-- Price -->
+                            P<?php echo $only_price; ?>
+                          </td>
+                          <td><!-- Size -->
+                            <?php echo $pro_size; ?>
+                          </td>
+                          <td><!-- Delete -->
+                            <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
+                          </td>
+                          <td>
+                            P<?php echo $sub_total; ?>
+                          </td>
+                        </tr>
+
+                  <?php 
+                  
+                    } 
+                  
+                  }
+                  ?>
+
                 </tbody>
 
                 <tfoot>
                   <tr>
                     <th colspan="5">Total</th>
-                    <th colspan="2">P1200</th>
+                    <th colspan="2">P<?php echo $total; ?></th>
                   </tr>
                 </tfoot>
 
@@ -164,6 +164,36 @@
 
         </div><!-- box Finish -->
 
+        <?php 
+        
+          function update_cart(){
+
+            global $conn;
+
+            if(isset($_POST['update'])){
+
+              foreach($_POST['remove'] as $remove_id){
+
+                $delete_product = "delete from cart where p_id='$remove_id'";
+
+                $run_delete = mysqli_query($conn,$delete_product);
+
+                if($run_delete){
+
+                  echo "<script>window.open('cart.php','_self')</script>";
+
+                }
+
+              }
+
+            }
+
+          }
+
+          echo $up_cart = update_cart();
+
+        ?>
+
         <div id="row same-height-row"><!-- row Start -->
 
           <div class="col-md-3 col-sm-6"><!-- col-md-3 Start -->
@@ -172,60 +202,50 @@
 
               <h3 class="text-center">Products you might also like</h3>
 
-            </div><!-- box Start -->
+            </div><!-- box Finish -->
 
-          </div><!-- col-md-3 Start -->
+          </div><!-- col-md-3 Sinish -->
 
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
+          <?php 
+          
+            $get_products = "select * from products order by rand() LIMIT 0,3";
 
-            <div class="product same-height"><!-- product Start -->
+            $run_products = mysqli_query($conn,$get_products);
 
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 2">
-              </a>
+            while($row_products=mysqli_fetch_array($run_products)){
 
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
+              $pro_id = $row_products['product_id'];
 
-            </div><!-- product Finish -->
+              $pro_name = $row_products['product_name'];
 
-          </div><!-- col-md-3 Finish -->
+              $pro_price = $row_products['product_price'];
 
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
+              $pro_img1 = $row_products['product_img1'];
 
-            <div class="product same-height"><!-- product Start -->
+              echo "
 
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="product 2">
-              </a>
+                <div class='col-md-3 col-sm-6 center-responsive'><!-- col-md-3 Start -->
 
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
+                  <div class='product same-height'><!-- product Start -->
 
-            </div><!-- product Finish -->
+                    <a href='details.php?pro_id=$pro_id'>
+                      <img class='img-responsive' src='admin_area/product_images/$pro_img1' alt='product 2'>
+                    </a>
 
-          </div><!-- col-md-3 Finish -->
+                    <div class='text'><!-- text Start -->
+                      <h3><a href='details.php?pro_id=$pro_id'>$pro_name</a></h3>
+                      <p class='price'>P$pro_price</p>
+                    </div><!-- text Finish -->
 
-          <div class="col-md-3 col-sm-6 center-responsive"><!-- col-md-3 Start -->
+                  </div><!-- product Finish -->
 
-            <div class="product same-height"><!-- product Start -->
+                </div><!-- col-md-3 Finish -->
 
-              <a href="details.php">
-                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="product 2">
-              </a>
+              ";
 
-              <div class="text"><!-- text Start -->
-                <h3><a href="details.php">Shirt</a></h3>
-                <p class="price">P350</p>
-              </div><!-- text Finish -->
+            }
 
-            </div><!-- product Finish -->
-
-          </div><!-- col-md-3 Finish -->
+          ?>
 
         </div><!-- row Finish -->
 
@@ -250,7 +270,7 @@
                 <tbody>
                   <tr>
                     <td> Order Sub-Total </td>
-                    <th> P1200 </th>
+                    <th> P<?php echo $total; ?> </th>
                   </tr>
 
                   <tr>
@@ -265,7 +285,7 @@
 
                   <tr class="total">
                     <td> Total </td>
-                    <th> P1200 </th>
+                    <th> P<?php echo $total; ?> </th>
                   </tr>
                 </tbody>
 
