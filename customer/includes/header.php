@@ -1,6 +1,7 @@
 <?php
 
   include("includes/db.php");
+  include("functions/functions.php");
 
 ?>
 
@@ -23,7 +24,7 @@
       <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
         <a href="#" class="btn btn-success btn-sm">Welcome to MarketPlace</a>
-        <a href="checkout.php">4 Items In Your Cart | Total Price: P300 </a>
+        <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price() ?> </a>
                
       </div><!-- col-md-6 offer Finish -->
            
@@ -106,7 +107,7 @@
                    
           <i class="fa fa-shopping-cart"></i>
                    
-          <span>4 Items In Your Cart</span>
+          <span><?php items(); ?> Items In Your Cart</span>
                    
         </a><!-- btn navbar-btn btn-primary Finish -->
                
