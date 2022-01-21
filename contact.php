@@ -85,6 +85,38 @@
 
             </form>
 
+            <?php 
+            
+              if(isset($_POST['submit'])){
+
+                $sender_name = $_POST['name'];
+
+                $sender_email = $_POST['email'];
+
+                $sender_subject = $_POST['subject'];
+
+                $sender_message = $_POST['message'];
+
+                $receiver_email = "amdg24.mdg@gmail.com";
+
+                mail($receiver_email,$sender_name,$sender_subject,$sender_message, $sender_email);
+
+                $email = $_POST['email'];
+
+                $subject = "Welcome to my website";
+
+                $msg = "Thanks for sending us a message. We will reply as soon as we can";
+
+                $from = "amdg24.mdg@gmail.com";
+
+                mail($email, $subject, $msg, $from);
+
+                echo "<h2 align='center'>Your message has been sent successfully.</h2>";
+
+              }
+
+            ?>
+
           </div><!-- box-header Finish -->
 
         </div><!-- box Finish -->
