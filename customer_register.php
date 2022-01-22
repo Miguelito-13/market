@@ -193,14 +193,11 @@
 
     $check_cart = mysqli_num_rows($run_cart);
 
-    if($check_cart>0){
+    $_SESSION['customer_email'] = $c_email;
 
-      $_SESSION['customer_email'] = $c_email;
-
-      echo "<script>alert('Account Registered Successfully')</script>";
-      echo "<script>window.open('index.php','_self')</script>";
-
-    }
+    echo "<script>alert('Account Registered Successfully')</script>";
+    echo "<script>window.open('index.php','_self')</script>";
+    
 
   }
 
