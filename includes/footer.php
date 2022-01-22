@@ -20,8 +20,38 @@
         <h4>User Section</h4>
 
         <ul>
-          <li><a href="checkout.php">Login</a></li>
-          <li><a href="customer_register.php">Sign Up</a></li>
+          
+          <?php 
+              
+            if(!isset($_SESSION['customer_email'])){
+
+              echo "<a href='checkout.php'> Login </a>";
+
+            }else{
+
+               echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+
+            }
+
+          ?>
+
+          <li>
+
+          <?php 
+              
+            if(!isset($_SESSION['customer_email'])){
+
+              echo "<a href='checkout.php'> Login </a>";
+
+            }else{
+
+              echo "<a href='customer/my_account.php?edit_account'> Edit Account </a>";
+
+            }
+
+          ?>
+
+          </li>
         </ul>
 
         <hr class="hidden-md hidden-lg hidden-sm">
