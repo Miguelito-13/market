@@ -69,11 +69,18 @@
 
                 <label>Gender </label>
                 <select name="c_gender" id="" class="form-control" required>
-                  <option>Please choose</option>
+                  <option disabled selected>Please choose</option>
                   <option>Male</option>
                   <option>Female</option>
                   <option>Others</option>
                 </select>
+
+              </div><!-- form-group Finish -->
+
+              <div class="form-group"><!-- form-group Start -->
+
+                <label>Age </label>
+                <input type="int" class="form-control" name="c_age" required>
 
               </div><!-- form-group Finish -->
 
@@ -114,8 +121,8 @@
 
               <div class="text-center"><!-- text-center Start -->
 
-                <button type="submit" name="submit" class="btn btn-primary">
-                  <i class="fa fa-user-md"></i> Send Message
+                <button type="submit" name="register" class="btn btn-primary">
+                  <i class="fa fa-user-md"></i> Register
                 </button>
 
               </div><!-- text-center Finish -->
@@ -144,3 +151,57 @@
     
 </body>
 </html>
+
+<?php 
+
+  if(isset($_POST['register'])){
+
+    $c_name = $_POST['c_name'];
+
+    $c_email = $_POST['c_email'];
+
+    $c_pass = $_POST['c_pass'];
+
+    $c_gender = $_POST['c_gender'];
+
+    $c_age = $_POST['c_age'];
+    
+    $c_city = $_POST['c_city'];
+
+    $c_address = $_POST['c_address'];
+
+    $c_zip = $_POST['c_zip'];
+
+    $c_contact = $_POST['c_contact'];
+
+    $c_image = $_FILES['c_image']['name'];
+
+    $c_image_tmp = $_FILES['c_image']['tmp_name'];
+
+    $c_ip = getRealIpUser();
+
+    move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
+
+    $insert_customer = "insert into customer (customer_name,customer_email,customer_pass,customer_gender,customer_age,customer_city,customer_address,customer_zip,customer_contact,customer_image,customer_ip) 
+    values ('$c_name','$c_email','$c_pass','$c_gender','$c_age','$c_city','$c_address','$c_zip','$c_contact','$c_image','$c_ip')";
+
+    $run_customer = mysqli_query($conn,$insert_customer);
+
+    $sel_cart = "select * from cart where ip_add='$c_ip'";
+
+    $run_cart = mysqli_query($conn,$sel_cart);
+
+    $check_cart = mysqli_num_rows($run_cart);
+
+    if($check_cart>0){
+
+      $_SESSION['customer_email'] = $c_email;
+
+      echo "<script>alert('Account Registered Successfully')</script>";
+      echo "<script>window.open('index.php','_self')</script>";
+
+    }
+
+  }
+
+?>
