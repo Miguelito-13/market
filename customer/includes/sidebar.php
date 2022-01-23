@@ -2,15 +2,47 @@
 
   <div class="panel-heading"><!-- panel-heading Start -->
 
-    <center>
-      <img class="img-responsive" src="customer_images/blank_profile.png" alt="Profile">
-    </center>
+    <?php 
+    
+      $customer_session = $_SESSION['customer_email'];
 
-    <br/>
+      $get_customer = "select * from customer where customer_email='$customer_session'";
+      
+      $run_customer = mysqli_query($conn,$get_customer);
 
-    <h3 align="center" class="panel-title">
-      Name: Real User
-    </h3>
+      $row_customer = mysqli_fetch_array($run_customer);
+
+      $customer_image = $row_customer['customer_image'];
+
+      $customer_name = $row_customer['customer_name'];
+
+      if(!isset($_SESSION['customer_email'])){
+
+        
+
+      }else{
+
+        echo "
+        
+          <center>
+          
+            <img src='customer_images/$customer_image' class='img-responsive'>
+          
+          </center>
+
+          <br/>
+
+          <h3 class='panel-title' align='center'>
+          
+            Name: $customer_name
+
+          </h3>
+
+        ";
+
+      }
+    
+    ?>
 
   </div><!-- panel-heading Finish -->
 
