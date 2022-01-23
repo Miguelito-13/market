@@ -92,11 +92,11 @@
                 
                 if(!isset($_SESSION['customer_email'])){
 
-                  echo "<a href='checkout.php'> My Account </a>";
+                  echo "<a href='../../checkout.php'> My Account </a>";
 
                 }else{
 
-                  echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+                  echo "<a href='../my_account.php?my_orders'> My Account </a>";
 
                 }
 
@@ -110,11 +110,11 @@
           
               if(!isset($_SESSION['customer_email'])){
 
-                echo "<a href='../checkout.php'> Login </a>";
+                echo "<a href='../../checkout.php'> Login </a>";
 
               }else{
 
-                echo "<a href='logout.php'> Logout </a>";
+                echo "<a href='../logout.php'> Logout </a>";
 
               }
 
@@ -160,38 +160,38 @@
           <ul class="nav navbar-nav left"><!-- nav navbar-nav left Begin -->
                        
             <li>
-              <a href="../index.php">Home</a>
+              <a href="../../index.php">Home</a>
             </li>
             <li>
-              <a href="../shop.php">Shop</a>
+              <a href="../../shop.php">Shop</a>
             </li>
             <li class="active">
               <?php 
                 
                 if(!isset($_SESSION['customer_email'])){
 
-                  echo "<a href='checkout.php'> My Account </a>";
+                  echo "<a href='../../checkout.php'> My Account </a>";
 
                 }else{
 
-                  echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+                  echo "<a href='../my_account.php?my_orders'> My Account </a>";
 
                 }
 
               ?>
             </li>
             <li>
-              <a href="../cart.php">Shopping Cart</a>
+              <a href="../../cart.php">Shopping Cart</a>
             </li>
             <li>
-              <a href="../contact.php">Contact Us</a>
+              <a href="../../contact.php">Contact Us</a>
             </li>
                        
           </ul><!-- nav navbar-nav left Finish -->
                    
         </div><!-- padding-nav Finish -->
                
-        <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+        <a href="../../cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
           <i class="fa fa-shopping-cart"></i>
                    

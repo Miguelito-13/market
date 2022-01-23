@@ -64,11 +64,11 @@
                 
                 if(!isset($_SESSION['customer_email'])){
 
-                  echo "<a href='checkout.php'> My Account </a>";
+                  echo "<a href='../checkout.php'> My Account </a>";
 
                 }else{
 
-                  echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+                  echo "<a href='my_account.php?my_orders'> My Account </a>";
 
                 }
 
@@ -142,11 +142,11 @@
                 
                 if(!isset($_SESSION['customer_email'])){
 
-                  echo "<a href='checkout.php'> My Account </a>";
+                  echo "<a href='../checkout.php'> My Account </a>";
 
                 }else{
 
-                  echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+                  echo "<a href='my_account.php?my_orders'> My Account </a>";
 
                 }
 
@@ -163,7 +163,7 @@
                    
         </div><!-- padding-nav Finish -->
                
-        <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+        <a href="../cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
           <i class="fa fa-shopping-cart"></i>
                    
