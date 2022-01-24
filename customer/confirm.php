@@ -304,13 +304,56 @@
 
             <div class="text-center"><!-- text-center Start -->
 
-              <button class="btn btn-primary btn-lg">
+              <button class="btn btn-primary btn-lg" name="confirm_payment">
                 <i class="fa fa-user-md"> Confirm Payment</i>
               </button>
             
             </div><!-- text-center Finish -->
 
           </form>
+
+          <?php
+          
+            if(isset($_POST['confirm_payment'])){
+
+              $update_id = $_GET['update_id'];
+
+              $invoice_no = $_POST['invoice_no'];
+
+              $amount = $_POST['amount_sent'];
+
+              $payment_mode = $_POST['payment_mode'];
+
+              $ref_no = $_POST['ref_no'];
+
+              $payment_date = $_POST['date'];
+
+              $complete = "Complete";
+
+              $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,payment_date) 
+              values ('$invoice_no','$amount','$payment_mode','$ref_no','$payment_date')";
+
+              $run_payment = mysqli_query($conn,$insert_payment);
+
+              $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+
+              $run_customer_order = mysqli_query($conn,$update_customer_order);
+
+              $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+
+              $run_pending_order = mysqli_query($conn,$update_pending_order);
+
+              if($run_pending_order){
+
+                echo "<script>alert('Thank you for purchasing, your order will be completed soon')</script>";
+
+                echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+
+              }
+
+            }
+
+          ?>
 
         </div><!-- box Finish -->
 
