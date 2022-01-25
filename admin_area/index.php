@@ -19,7 +19,15 @@
 
       <div class="container-fluid"><!-- container-fluid Start -->
 
+        <?php 
+        
+          if(isset($_GET['dashboard'])){
 
+            include("dashboard.php");
+
+          }
+        
+        ?>
 
       </div><!-- container-fluid Finish -->
 
