@@ -38,9 +38,11 @@
 
             <div class="huge"><!-- huge Start -->
 
-              <div> Products </div>
+              <?php echo $count_products; ?>
 
             </div><!-- huge Finish -->
+
+              <div> Products </div>
 
           </div><!-- col-xs-9 Finish -->
 
@@ -84,7 +86,7 @@
 
             <div class="huge"><!-- huge Start -->
 
-              7
+              <?php echo $count_customers; ?>
 
             </div><!-- huge Finish -->
 
@@ -132,7 +134,7 @@
 
             <div class="huge"><!-- huge Start -->
 
-              7
+              <?php echo $count_p_cats; ?>
 
             </div><!-- huge Finish -->
 
@@ -180,7 +182,7 @@
 
             <div class="huge"><!-- huge Start -->
 
-              7
+              <?php echo $count_pending_orders; ?>
 
             </div><!-- huge Finish -->
 
@@ -245,35 +247,67 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>user@example.com</td>
-                <td>123456</td>
-                <td>987654</td>
-                <td>2</td>
-                <td>S</td>
-                <td>Pending</td>
-              </tr>
+
+              <?php 
+              
+                $i=0;
+
+                $get_order = "select * from pending_orders order by 1 DESC LIMIT 0,5";
+
+                $run_order = mysqli_query($conn,$get_order);
+
+                while($row_order=mysqli_fetch_array($run_order)){
+
+                  $order_id = $row_order['order_id'];
+
+                  $c_id = $row_order['customer_id'];
+
+                  $invoice_no = $row_order['invoice_no'];
+
+                  $product_id = $row_order['product_id'];
+
+                  $qty = $row_order['qty'];
+
+                  $size = $row_order['size'];
+
+                  $order_status = $row_order['order_status'];
+
+                  $i++;
+              
+              ?>
 
               <tr>
-                <td>1</td>
-                <td>user@example.com</td>
-                <td>123456</td>
-                <td>987654</td>
-                <td>2</td>
-                <td>S</td>
-                <td>Pending</td>
+                <td><?php echo $order_id; ?></td>
+                <td>
+                  
+                  <?php  
+                  
+                    $get_customer = "select * from customer where customer_id='$c_id'";
+
+                    $run_customer = mysqli_query($conn,$get_customer);
+
+                    $row_customer = mysqli_fetch_array($run_customer);
+
+                    $customer_email = $row_customer['customer_email'];
+
+                    echo $customer_email;
+
+                  ?>
+
+                </td>
+                <td><?php echo $invoice_no; ?></td>
+                <td><?php echo $order_id; ?></td>
+                <td><?php echo $qty; ?></td>
+                <td><?php echo $size; ?></td>
+                <td><?php echo $order_status; ?></td>
               </tr>
 
-              <tr>
-                <td>1</td>
-                <td>user@example.com</td>
-                <td>123456</td>
-                <td>987654</td>
-                <td>2</td>
-                <td>S</td>
-                <td>Pending</td>
-              </tr>
+              <?php 
+              
+                }
+
+              ?>
+
             </tbody>
 
           </table>
@@ -302,11 +336,11 @@
 
         <div class="mb-md thumb-info"><!-- mb-md Start -->
 
-          <img src="admin_images/blank_profile.png" alt="admin-thumb-info" class="rounded img-responsive">
+          <img src="admin_images/<?php echo $admin_image; ?>" alt="admin-thumb-info" class="rounded img-responsive">
 
           <div class="thumb-info-title"><!-- thumb-info-title Start -->
 
-            <span class="thumb-info-inner"> Mr. Yoso </span>
+            <span class="thumb-info-inner"> <?php echo $admin_name ?> </span>
             <span class="thumb-info-type"> Administrator </span>
 
           </div><!-- thumb-info-title Finish -->
