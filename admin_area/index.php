@@ -93,15 +93,39 @@
 
           }
 
+          if(isset($_GET['edit_product'])){
+
+            include("edit_product.php");
+
+          }
+
           if(isset($_GET['delete_product'])){
 
             include("delete_product.php");
 
           }
 
-          if(isset($_GET['edit_product'])){
+          if(isset($_GET['insert_p_cat'])){
 
-            include("edit_product.php");
+            include("insert_p_cat.php");
+
+          }
+
+          if(isset($_GET['view_p_cats'])){
+
+            include("view_p_cats.php");
+
+          }
+
+          if(isset($_GET['edit_p_cat'])){
+
+            include("edit_p_cat.php");
+
+          }
+
+          if(isset($_GET['delete_p_cat'])){
+
+            include("delete_p_cat.php");
 
           }
         

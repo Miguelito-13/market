@@ -6,31 +6,23 @@
 
   }else{
 
-?>
+    if(isset($_GET['delete_product'])){
 
-<?php
+      $delete_id = $_GET['delete_product'];
 
-  if(isset($_GET['delete_product'])){
+      $delete_product = "delete from products where product_id='$delete_id'";
 
-    $delete_id = $_GET['delete_product'];
+      $run_delete = mysqli_query($conn,$delete_product);
 
-    $delete_product = "delete from products where product_id='$delete_id'";
+      if($run_delete){
 
-    $run_delete = mysqli_query($conn,$delete_product);
+        echo "<script>alert('Product has been deleted.')</script>";
 
-    if($run_delete){
+        echo "<script>window.open('index.php?view_products','_self')</script>";
 
-      echo "<script>alert('Product has been deleted.')</script>";
-
-      echo "<script>window.open('index.php?view_products','_self')</script>";
+      }
 
     }
-
-  }
-
-?>
-
-<?php
 
   }
 

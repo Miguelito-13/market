@@ -59,7 +59,7 @@
         </li>
 
         <li>
-          <a href="index.php?view_cats=">
+          <a href="index.php?view_p_cats=">
             <i class="fa fa-fw fa-gear"></i> Product Categories
             <span class="badge"><?php echo $count_p_cats ?></span>
           </a>

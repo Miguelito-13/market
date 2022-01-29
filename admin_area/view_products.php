@@ -57,8 +57,8 @@
                   <th> Product Sold: </th>
                   <th> Product Keywords: </th>
                   <th> Product Date: </th>
-                  <th> Product Delete: </th>
                   <th> Product Edit: </th>
+                  <th> Product Delete: </th>
                 </tr>
               </thead>
 
@@ -111,15 +111,15 @@
 
                   </td>
                   <td><?php echo $pro_keywords; ?></td>
-                  <td><?php echo $pro_date; ?></td>
-                  <td> 
-                    <a href="index.php?delete_product=<?php echo $pro_id; ?>">
-                      <i class="fa fa-trash-o"></i> Delete
-                    </a> 
-                  </td>
+                  <td><?php echo $pro_date; ?></td
                   <td>
                     <a href="index.php?edit_product=<?php echo $pro_id; ?>">
                       <i class="fa fa-pencil"></i> Edit
+                    </a> 
+                  </td>
+                  <td> 
+                    <a href="index.php?delete_product=<?php echo $pro_id; ?>">
+                      <i class="fa fa-trash-o"></i> Delete
                     </a> 
                   </td>
                 </tr>
