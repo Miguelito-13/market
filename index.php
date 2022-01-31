@@ -13,9 +13,30 @@
         <ol class="carousel-indicators"><!-- carousel-indicators Begin -->
                    
           <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
+
+          <?php
+
+            $i = 1;
+          
+            $get_carousel = "select * from carousel";
+
+            $run_carousel = mysqli_query($conn,$get_carousel);
+
+            $count_carousel = mysqli_num_rows($run_carousel);
+
+            while($i<$count_carousel){
+
+              echo "
+
+                <li data-target='#myCarousel' data-slide-to='$i'></li>
+
+              ";
+
+              $i++;
+
+            }
+          
+          ?>
                    
         </ol><!-- carousel-indicators Finish -->
                
@@ -40,7 +61,7 @@
                 ";
               }
 
-              $get_slides = "select * from carousel LIMIT 1,3";
+              $get_slides = "select * from carousel LIMIT 1,$count_carousel";
               $run_slides = mysqli_query($conn,$get_slides);
               while($row_slides=mysqli_fetch_array($run_slides)){
                 $carousel_name = $row_slides['carousel_name'];
