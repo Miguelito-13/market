@@ -16,7 +16,7 @@
 
       <li>
 
-        <i class="fa fa-dashboard"></i> Dashboard / View Product Category
+        <i class="fa fa-dashboard"></i> Dashboard / View Product Categories
 
       </li>
 
@@ -36,7 +36,7 @@
 
         <h3 class="panel-title">
 
-          <i class="fa fa-tags fa-fw"></i> View Product Category
+          <i class="fa fa-tags fa-edit"></i> View Product Categories
 
         </h3>
 

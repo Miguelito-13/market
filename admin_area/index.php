@@ -176,6 +176,42 @@
             include("delete_slide.php");
 
           }
+
+          if(isset($_GET['view_customers'])){
+
+            include("view_customers.php");
+
+          }
+
+          if(isset($_GET['view_orders'])){
+
+            include("view_orders.php");
+
+          }
+
+          if(isset($_GET['view_payments'])){
+
+            include("view_payments.php");
+
+          }
+
+          if(isset($_GET['insert_user'])){
+
+            include("insert_user.php");
+
+          }
+
+          if(isset($_GET['view_users'])){
+
+            include("view_users.php");
+
+          }
+
+          if(isset($_GET['user_profile'])){
+
+            include("user_profile.php");
+
+          }
         
         ?>
 

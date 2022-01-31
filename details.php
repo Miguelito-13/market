@@ -118,12 +118,12 @@
 
                 <div class="form-group"><!-- form-group Start -->
 
-                <label class="col-md-5 control-label">Product Size</label>
+                  <label class="col-md-5 control-label">Product Size</label>
 
                   <div class="col-md-7"><!-- col-md-7 Start -->
 
                   <select name="product_size" class="form-control" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')">
-                    <option disabled selected>Select a Size</option>
+                    <option disabled >Select a Size</option>
                     <option>S</option>
                     <option>M</option>
                     <option>L</option>

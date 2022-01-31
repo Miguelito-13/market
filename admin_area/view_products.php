@@ -36,7 +36,7 @@
 
           <h3 class="panel-title">
 
-            <i class="fa fa-tags"></i> View products
+            <i class="fa fa-tags"></i> View Products
 
           </h3>
 
@@ -111,7 +111,7 @@
 
                   </td>
                   <td><?php echo $pro_keywords; ?></td>
-                  <td><?php echo $pro_date; ?></td
+                  <td><?php echo $pro_date; ?></td>
                   <td>
                     <a href="index.php?edit_product=<?php echo $pro_id; ?>">
                       <i class="fa fa-pencil"></i> Edit

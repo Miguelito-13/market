@@ -36,7 +36,7 @@
 
         <h3 class="panel-title">
 
-          <i class="fa fa-tags fa-fw"></i> View Slides
+          <i class="fa fa-gear fa-fw"></i> View Slides
 
         </h3>
 

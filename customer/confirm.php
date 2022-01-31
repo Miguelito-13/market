@@ -15,7 +15,6 @@
 
     $order_id = $_GET['order_id'];
 
-
   }
 
 ?>
@@ -259,7 +258,19 @@
 
               <label> Invoice No: </label>
 
-              <input type="text" class="form-control" name="invoice_no" required>
+              <?php
+              
+                $get_invoice_no = "select * from pending_orders where order_id='$order_id'";
+
+                $run_invoice_no = mysqli_query($conn,$get_invoice_no);
+
+                $row_invoice_no = mysqli_fetch_array($run_invoice_no);
+
+                $invoice_no = $row_invoice_no['invoice_no'];
+
+              ?>
+
+              <input type="text" class="form-control" name="invoice_no" required value='<?php echo $invoice_no; ?>'>
 
             </div><!-- form-group Finish -->
 
@@ -267,7 +278,19 @@
 
               <label> Amount Sent: </label>
 
-              <input type="text" class="form-control" name="amount_sent" required>
+              <?php
+              
+                $get_due_amount = "select * from customer_orders where order_id='$order_id'";
+
+                $run_due_amount = mysqli_query($conn,$get_due_amount);
+
+                $row_due_amount = mysqli_fetch_array($run_due_amount);
+
+                $due_amount = $row_due_amount['due_amount'];
+
+              ?>
+
+              <input type="text" class="form-control" name="amount_sent" required value='<?php echo $due_amount; ?>'>
 
             </div><!-- form-group Finish -->
 
@@ -305,7 +328,7 @@
             <div class="text-center"><!-- text-center Start -->
 
               <button class="btn btn-primary btn-lg" name="confirm_payment">
-                <i class="fa fa-user-md"> Confirm Payment</i>
+                <i class="fa fa-user-md"></i> Confirm Payment
               </button>
             
             </div><!-- text-center Finish -->

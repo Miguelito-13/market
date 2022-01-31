@@ -45,7 +45,7 @@
         </li>
 
         <li>
-          <a href="index.php?view_products=">
+          <a href="index.php?view_products">
             <i class="fa fa-fw fa-envelope"></i> Products
             <span class="badge"><?php echo $count_products ?></span>
           </a>
@@ -59,7 +59,7 @@
         </li>
 
         <li>
-          <a href="index.php?view_p_cats=">
+          <a href="index.php?view_p_cats">
             <i class="fa fa-fw fa-gear"></i> Product Categories
             <span class="badge"><?php echo $count_p_cats ?></span>
           </a>
@@ -161,7 +161,7 @@
       </li>
 
       <li>
-        <a href="index.php?view_oders">
+        <a href="index.php?view_orders">
           <i class="fa fa-fw fa-book"></i> View Orders
         </a>
       </li>
