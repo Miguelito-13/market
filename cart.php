@@ -3,6 +3,16 @@
   $active='Cart';
   include("includes/header.php");
 
+  $session_email = $_SESSION['customer_email'];
+
+  $select_customer = "select * from customer where customer_email='$session_email'";
+
+  $run_customer = mysqli_query($conn,$select_customer);
+
+  $row_customer = mysqli_fetch_array($run_customer);
+
+  $customer_id = $row_customer['customer_id'];
+
 ?>
 
   <div id="content"><!-- content Start -->
@@ -126,7 +136,7 @@
 
                 <tfoot>
                   <tr>
-                    <th colspan="5">Total</th>
+                    <th colspan="6">Total</th>
                     <th colspan="2">P<?php echo $total; ?></th>
                   </tr>
                 </tfoot>
@@ -151,7 +161,7 @@
                   <i class="fa fa-refresh"></i> Update Cart
                 </button>
 
-                <a href="checkout.php" class="btn btn-primary">
+                <a href="order.php?c_id=<?php echo $customer_id ?>" class="btn btn-primary">
                   Proceed Checkout 
                   <i class="fa fa-chevron-right"></i>
                 </a>

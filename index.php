@@ -101,72 +101,6 @@
     </div><!-- col-md-12 Finish -->
        
   </div><!-- container Finish -->
-   
-  <div id="advantages"><!-- advantages Start -->
-
-    <div class="container"><!-- container Start -->
-
-      <div class="same-height-row"><!-- same-height-row Start -->
-
-        <div class="col-sm-4"><!-- col-sm-4 Start -->
-
-          <div class="box same-height"><!-- box Start -->
-
-            <div class="icon"><!-- icon Start -->
-
-              <i class="fa fa-star"></i>
-
-            </div><!-- icon Finish -->
-
-            <h3><a href="#">Lorem Ipsum</a></h3>
-
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-
-          </div><!-- box Finish -->
-
-        </div><!-- col-sm-4 Finish -->
-
-        <div class="col-sm-4"><!-- col-sm-4 Start -->
-
-          <div class="box same-height"><!-- box Start -->
-
-            <div class="icon"><!-- icon Start -->
-
-              <i class="fa fa-star"></i>
-
-            </div><!-- icon Finish -->
-
-            <h3><a href="#">Lorem Ipsum</a></h3>
-
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-
-          </div><!-- box Finish -->
-
-        </div><!-- col-sm-4 Finish -->
-
-        <div class="col-sm-4"><!-- col-sm-4 Start -->
-
-          <div class="box same-height"><!-- box Start -->
-
-            <div class="icon"><!-- icon Start -->
-
-              <i class="fa fa-star"></i>
-
-            </div><!-- icon Finish -->
-
-            <h3><a href="#">Lorem Ipsum</a></h3>
-
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-
-          </div><!-- box Finish -->
-
-        </div><!-- col-sm-4 Finish -->
-
-      </div><!-- container Finish -->
-
-    </div><!-- container Finish -->
-
-  </div><!-- advantages Finish -->
 
   <div id="hot"><!-- hot Start -->
 
@@ -176,7 +110,7 @@
 
         <div class="col-md-12"><!-- col-md-12 Start -->
 
-          <h2>Our Latest Product</h2>
+          <h2>Our Latest Products</h2>
 
         </div><!-- col-md-12 Finish -->
 

@@ -33,6 +33,9 @@
         Login
       </button>
 
+      <br/>
+      <a href="../index.php">Back to Home Page</a>
+
     </form>
 
   </div><!-- container Finish -->

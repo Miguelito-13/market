@@ -25,7 +25,7 @@
               
             if(!isset($_SESSION['customer_email'])){
 
-              echo "<a href='checkout.php'> Login </a>";
+              echo "<a href='customer_register.php'> Register </a>";
 
             }else{
 
@@ -114,6 +114,10 @@
         </p>
 
         <a href="contact.php">Check our Contacts Page</a>
+        
+        <br/>
+
+        <a href='admin_area/login.php'> Login As Admin </a>
 
         <hr class="hidden-md hidden-lg hidden-sm">
 

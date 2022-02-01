@@ -62,6 +62,7 @@
                   <th> Contact No.: </th>
                   <th> Pending Orders: </th>
                   <th> Compeleted Orders: </th>
+                  <th> Delete Customer: </th>
                 </tr>
               </thead>
 
@@ -146,6 +147,11 @@
                     
                     ?>
                   </td>
+                  <td>
+                  <a href="index.php?delete_customer=<?php echo $customer_id; ?>">
+                    <i class="fa fa-trash-o"></i> Delete
+                  </a> 
+                </td>
                 </tr>
 
                 <?php

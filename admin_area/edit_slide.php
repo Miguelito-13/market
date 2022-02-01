@@ -84,7 +84,7 @@
                           
                   <input name="carousel_img" type="file" class="form-control" required>
                   
-                  <img src="slides_images/<?php echo $carousel_img; ?>" alt="<?php echo $carousel_img; ?>" width="400" height="200">
+                  <img class="img-responsive" src="slides_images/<?php echo $carousel_img; ?>" alt="<?php echo $carousel_img; ?>">
                           
                 </div><!-- col-md-6 Finish -->
                        

@@ -183,6 +183,12 @@
 
           }
 
+          if(isset($_GET['delete_customer'])){
+
+            include("delete_customer.php");
+
+          }
+
           if(isset($_GET['view_orders'])){
 
             include("view_orders.php");

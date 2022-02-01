@@ -83,7 +83,7 @@
               <tr>
                 <td><?php echo $carousel_id; ?></td>
                 <td><?php echo $carousel_name; ?></td>
-                <td><img src="slides_images/<?php echo $carousel_img; ?>" alt="<?php echo $carousel_img; ?>" width="400" height="200"></td>
+                <td><img class="img-responsive" src="slides_images/<?php echo $carousel_img; ?>" alt="<?php echo $carousel_img; ?>"></td>
                 <td>
                   <a href="index.php?edit_slide=<?php echo $carousel_id; ?>">
                     <i class="fa fa-pencil"></i> Edit
