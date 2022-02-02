@@ -139,7 +139,7 @@
 
       $admin_email = $_POST['admin_email'];
 
-      $admin_pass = $_POST['admin_pass'];
+      $admin_pass = password_hash($_POST['admin_pass'], PASSWORD_DEFAULT);
       
       $admin_image = $_FILES['admin_image']['name'];
       

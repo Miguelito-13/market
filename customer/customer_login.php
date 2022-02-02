@@ -28,7 +28,7 @@
 
       <label> Password </label>
 
-      <input name="c_pass" type="text" class="form-control" required>
+      <input name="c_pass" type="password" class="form-control" required>
 
     </div><!-- form-group Finish -->
 
@@ -60,41 +60,36 @@
 
     $customer_pass = $_POST['c_pass'];
 
-    $select_customer = "select * from customer where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+    $select_customer = "select * from customer where customer_email='$customer_email'";
 
     $run_customer = mysqli_query($conn,$select_customer);
 
-    $get_ip = getRealIpUser();
+    if(mysqli_num_rows($run_customer)>0){
 
-    $check_customer = mysqli_num_rows($run_customer);
+      while($row=mysqli_fetch_assoc($run_customer)){
 
-    $select_cart = "select * from cart where ip_add='$get_ip'";
+        if(password_verify($customer_pass,$row['customer_pass'])){
 
-    $run_cart = mysqli_query($conn,$select_cart);
+          $_SESSION['customer_email'] = $customer_email;
 
-    $check_cart = mysqli_num_rows($run_cart);
+          echo "<script>alert('Logged in successfully')</script>";
+          echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 
-    if($check_customer==0){
+        }else{
+
+          echo "<script>alert('Your email or password is wrong')</script>";
+
+          exit();
+
+        }
+
+      }
+
+    }else{
 
       echo "<script>alert('Your email or password is wrong')</script>";
 
       exit();
-
-    }
-
-    if($check_customer==1 AND $check_cart==0){
-
-      $_SESSION['customer_email'] = $customer_email;
-
-      echo "<script>alert('Logged in successfully')</script>";
-      echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
-
-    }else{
-
-      $_SESSION['customer_email'] = $customer_email;
-
-      echo "<script>alert('Logged in successfully')</script>";
-      echo "<script>window.open('checkout.php','_self')</script>";
 
     }
 

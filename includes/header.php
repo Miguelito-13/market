@@ -70,7 +70,17 @@
 
             }else{
 
-              echo "Welcome ". $_SESSION['customer_email'];
+              $customer_email = $_SESSION['customer_email'];
+    
+              $get_customer = "select * from customer where customer_email='$customer_email'";
+              
+              $run_customer = mysqli_query($conn,$get_customer);
+              
+              $row_customer = mysqli_fetch_array($run_customer);
+              
+              $customer_name = $row_customer['customer_name'];
+
+              echo "Welcome ". $customer_name;
 
             }
 
@@ -213,18 +223,6 @@
           <span><?php items(); ?> Items In Your Cart</span>
                    
         </a><!-- btn navbar-btn btn-primary Finish -->
-               
-        <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Begin -->
-                   
-          <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"><!-- btn btn-primary navbar-btn Begin -->
-                       
-            <span class="sr-only">Toggle Search</span>
-                       
-              <i class="fa fa-search"></i>
-                       
-          </button><!-- btn btn-primary navbar-btn Finish -->
-                   
-        </div><!-- navbar-collapse collapse right Finish -->
                
         <div class="collapse clearfix" id="search"><!-- collapse clearfix Begin -->
                    

@@ -51,26 +51,32 @@
 
     $admin_pass = mysqli_real_escape_string($conn,$_POST['admin_pass']);
 
-    $get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass'";
+    $get_admin = "select * from admins where admin_email='$admin_email'";
 
     $run_admin = mysqli_query($conn,$get_admin);
 
-    $count = mysqli_num_rows($run_admin);
+    if(mysqli_num_rows($run_admin)){
 
-    if($count==1){
+      while($row=mysqli_fetch_assoc($run_admin)){
 
-      $_SESSION['admin_email'] = $admin_email;
+        if(password_verify($admin_pass,$row['admin_pass'])){
 
-      echo "<script>alert('Logged in Successfully.')</script>";
+          $_SESSION['admin_email'] = $admin_email;
 
-      echo "<script>window.open('index.php?dashboard','_self')</script>";
+          echo "<script>alert('Logged in Successfully.')</script>";
 
-    }else{
+          echo "<script>window.open('index.php?dashboard','_self')</script>";
 
-      echo "<script>alert('Email or password in invalid.')</script>";
+        }else{
+
+          echo "<script>alert('Email or password in invalid.')</script>";
+
+        }
+
+      }
 
     }
-
+    
   }
 
 ?>

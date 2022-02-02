@@ -313,15 +313,7 @@
 
               <label> Transaction / Reference ID: </label>
 
-              <input type="text" class="form-control" name="ref_no" required>
-
-            </div><!-- form-group Finish -->
-
-            <div class="form-group"><!-- form-group Start -->
-
-              <label> Payment Date: </label>
-
-              <input type="text" class="form-control" name="date" required>
+              <input type="text" class="form-control" name="ref_no" required placeholder="N/A if Cash on Delivery">
 
             </div><!-- form-group Finish -->
 
@@ -349,12 +341,10 @@
 
               $ref_no = $_POST['ref_no'];
 
-              $payment_date = $_POST['date'];
-
               $complete = "Complete";
 
               $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,payment_date) 
-              values ('$invoice_no','$amount','$payment_mode','$ref_no','$payment_date')";
+              values ('$invoice_no','$amount','$payment_mode','$ref_no',NOW())";
 
               $run_payment = mysqli_query($conn,$insert_payment);
 

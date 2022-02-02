@@ -69,7 +69,17 @@
 
             }else{
 
-              echo "Welcome ". $_SESSION['customer_email'];
+              $customer_email = $_SESSION['customer_email'];
+    
+              $get_customer = "select * from customer where customer_email='$customer_email'";
+              
+              $run_customer = mysqli_query($conn,$get_customer);
+              
+              $row_customer = mysqli_fetch_array($run_customer);
+              
+              $customer_name = $row_customer['customer_name'];
+
+              echo "Welcome ". $customer_name;
 
             }
 
