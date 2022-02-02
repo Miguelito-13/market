@@ -47,7 +47,7 @@
 
     $c_new_pass_again = $_POST['c_new_pass_again'];
 
-    $select_customer = "select * from customer where customer_email='$c_email'";
+    $select_customer = "select * from dlpp_customer where customer_email='$c_email'";
 
     $run_customer = mysqli_query($conn,$select_customer);
 

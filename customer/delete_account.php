@@ -18,7 +18,7 @@
 
   if(isset($_POST['Yes'])){
 
-    $delete_customer = "delete from customer where customer_email='$c_email'";
+    $delete_customer = "delete from dlpp_customer where customer_email='$c_email'";
 
     $run_delete_customer = mysqli_query($conn,$delete_customer);
 

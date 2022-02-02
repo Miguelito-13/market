@@ -10,7 +10,7 @@
 
       $delete_customer_id = $_GET['delete_customer'];
 
-      $delete_customer = "delete from customer where customer_id='$delete_customer_id'";
+      $delete_customer = "delete from dlpp_customer where customer_id='$delete_customer_id'";
 
       $run_delete = mysqli_query($conn,$delete_customer);
 

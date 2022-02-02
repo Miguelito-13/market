@@ -100,7 +100,7 @@
       
       $cat_desc = $_POST['cat_desc'];
 
-      $insert_cat = "insert into categories (cat_name, cat_desc) values ('$cat_name','$cat_desc') ";
+      $insert_cat = "insert into dlpp_categories (cat_name, cat_desc) values ('$cat_name','$cat_desc') ";
 
       $run_cat = mysqli_query($conn,$insert_cat);
 

@@ -10,7 +10,7 @@
 
       $edit_id = $_GET['edit_product'];
 
-      $get_p = "select * from products where product_id='$edit_id'";
+      $get_p = "select * from dlpp_products where product_id='$edit_id'";
 
       $run_edit = mysqli_query($conn,$get_p);
 
@@ -38,7 +38,7 @@
 
     }
 
-      $get_p_cat = "select * from product_categories where p_cat_id=$p_cat_id";
+      $get_p_cat = "select * from dlpp_product_categories where p_cat_id=$p_cat_id";
 
       $run_p_cat = mysqli_query($conn,$get_p_cat);
 
@@ -46,7 +46,7 @@
 
       $p_cat_name = $row_p_cat['p_cat_name'];
 
-      $get_cat = "select * from categories where cat_id=$cat_id";
+      $get_cat = "select * from dlpp_categories where cat_id=$cat_id";
 
       $run_cat = mysqli_query($conn,$get_cat);
 
@@ -127,7 +127,7 @@
                               
                       <?php 
                               
-                        $get_p_cats = "select * from product_categories";
+                        $get_p_cats = "select * from dlpp_product_categories";
                         $run_p_cats = mysqli_query($conn,$get_p_cats);
                               
                         while ($row_p_cats=mysqli_fetch_array($run_p_cats)){                    
@@ -155,11 +155,11 @@
                           
                   <select name="cat" class="form-control"><!-- form-control Begin -->
                               
-                    <option <?php echo $cat_id; ?>> <?php echo $cat_name; ?> </option>
+                    <option value="<?php echo $cat_id; ?>"> <?php echo $cat_name; ?> </option>
                               
                     <?php 
                               
-                      $get_cat = "select * from categories";
+                      $get_cat = "select * from dlpp_categories";
                       $run_cat = mysqli_query($conn,$get_cat);
                               
                       while ($row_cat=mysqli_fetch_array($run_cat)){        
@@ -315,7 +315,7 @@
       move_uploaded_file($temp_name2,"product_images/$product_img2");
       move_uploaded_file($temp_name3,"product_images/$product_img3");
       
-      $update_product = "update products set p_cat_id='$product_cat', cat_id='$cat', date=NOW(), product_name='$product_name',
+      $update_product = "update dlpp_products set p_cat_id='$product_cat', cat_id='$cat', date=NOW(), product_name='$product_name',
       product_img1='$product_img1', product_img2='$product_img2', product_img3='$product_img3', product_price='$product_price', product_keywords='$product_keywords', product_desc='$product_desc' where product_id='$p_id'";
 
       $run_product = mysqli_query($conn,$update_product);

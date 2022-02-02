@@ -10,7 +10,7 @@
 
       $delete_id = $_GET['delete_product'];
 
-      $delete_product = "delete from products where product_id='$delete_id'";
+      $delete_product = "delete from dlpp_products where product_id='$delete_id'";
 
       $run_delete = mysqli_query($conn,$delete_product);
 

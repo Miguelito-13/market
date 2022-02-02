@@ -10,7 +10,7 @@
 
       $delete_carousel_id = $_GET['delete_slide'];
 
-      $delete_carousel = "delete from carousel where carousel_id='$delete_carousel_id'";
+      $delete_carousel = "delete from dlpp_carousel where carousel_id='$delete_carousel_id'";
 
       $run_delete = mysqli_query($conn,$delete_carousel);
 

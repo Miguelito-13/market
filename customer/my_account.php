@@ -4,7 +4,7 @@
 
   if(!isset($_SESSION['customer_email'])){
 
-    echo "<script>window.opn('../checkout.php','_self')</script>";
+    echo "<script>window.open('../checkout.php','_self')</script>";
 
   }else{
 
@@ -43,7 +43,7 @@
 
               $customer_email = $_SESSION['customer_email'];
     
-              $get_customer = "select * from customer where customer_email='$customer_email'";
+              $get_customer = "select * from dlpp_customer where customer_email='$customer_email'";
               
               $run_customer = mysqli_query($conn,$get_customer);
               

@@ -119,7 +119,7 @@
       
       move_uploaded_file($temp_name,"slides_images/$carousel_img");
      
-      $insert_slide = "insert into carousel (carousel_name,carousel_img) values ('$carousel_name','$carousel_img')";
+      $insert_slide = "insert into dlpp_carousel (carousel_name,carousel_img) values ('$carousel_name','$carousel_img')";
       
       $run_slide = mysqli_query($conn,$insert_slide);
       

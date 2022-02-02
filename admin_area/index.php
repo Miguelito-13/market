@@ -12,7 +12,7 @@
 
     $admin_session = $_SESSION['admin_email'];
 
-    $get_admin = "select * from admins where admin_email='$admin_session'";
+    $get_admin = "select * from dlpp_admins where admin_email='$admin_session'";
 
     $run_admin = mysqli_query($conn,$get_admin);
 
@@ -26,25 +26,25 @@
 
     $admin_image = $row_admin['admin_image'];
 
-    $get_products = "select * from products";
+    $get_products = "select * from dlpp_products";
 
     $run_products = mysqli_query($conn,$get_products);
 
     $count_products = mysqli_num_rows($run_products);
 
-    $get_customers = "select * from customer";
+    $get_customers = "select * from dlpp_customer";
 
     $run_customers = mysqli_query($conn,$get_customers);
 
     $count_customers = mysqli_num_rows($run_customers);
 
-    $get_p_cats = "select * from product_categories";
+    $get_p_cats = "select * from dlpp_product_categories";
 
     $run_p_cats = mysqli_query($conn,$get_p_cats);
 
     $count_p_cats = mysqli_num_rows($run_p_cats);
 
-    $get_pending_orders = "select * from pending_orders";
+    $get_pending_orders = "select * from dlpp_pending_orders";
 
     $run_pending_orders = mysqli_query($conn,$get_pending_orders);
 

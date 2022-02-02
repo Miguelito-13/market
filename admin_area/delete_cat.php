@@ -10,7 +10,7 @@
 
       $delete_cat_id = $_GET['delete_cat'];
 
-      $delete_cat = "delete from categories where cat_id='$delete_cat_id'";
+      $delete_cat = "delete from dlpp_categories where cat_id='$delete_cat_id'";
 
       $run_delete = mysqli_query($conn,$delete_cat);
 

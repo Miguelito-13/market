@@ -63,7 +63,7 @@
 
                   $i = 0;
                 
-                  $get_admin = "select * from admins";
+                  $get_admin = "select * from dlpp_admins";
 
                   $run_admin = mysqli_query($conn,$get_admin);
 

@@ -6,7 +6,7 @@
     
       $customer_session = $_SESSION['customer_email'];
 
-      $get_customer = "select * from customer where customer_email='$customer_session'";
+      $get_customer = "select * from dlpp_customer where customer_email='$customer_session'";
       
       $run_customer = mysqli_query($conn,$get_customer);
 

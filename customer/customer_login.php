@@ -60,7 +60,7 @@
 
     $customer_pass = $_POST['c_pass'];
 
-    $select_customer = "select * from customer where customer_email='$customer_email'";
+    $select_customer = "select * from dlpp_customer where customer_email='$customer_email'";
 
     $run_customer = mysqli_query($conn,$select_customer);
 

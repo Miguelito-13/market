@@ -64,7 +64,7 @@
               
                 $i = 0;
 
-                $get_slides = "select * from carousel";
+                $get_slides = "select * from dlpp_carousel";
 
                 $run_slides = mysqli_query($conn,$get_slides);
 

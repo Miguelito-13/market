@@ -35,7 +35,7 @@
       
         $customer_session = $_SESSION['customer_email'];
 
-        $get_customer = "select * from customer where customer_email='$customer_session'";
+        $get_customer = "select * from dlpp_customer where customer_email='$customer_session'";
 
         $run_customer = mysqli_query($conn,$get_customer);
 
@@ -43,7 +43,7 @@
 
         $customer_id = $row_customer['customer_id'];
 
-        $get_orders = "select * from customer_orders where customer_id='$customer_id'";
+        $get_orders = "select * from dlpp_customer_orders where customer_id='$customer_id'";
 
         $run_orders = mysqli_query($conn,$get_orders);
 

@@ -10,7 +10,7 @@
 
       $edit_p_cat_id = $_GET['edit_p_cat'];
 
-      $get_p_cat = "select * from product_categories where p_cat_id='$edit_p_cat_id'";
+      $get_p_cat = "select * from dlpp_product_categories where p_cat_id='$edit_p_cat_id'";
 
       $run_edit = mysqli_query($conn,$get_p_cat);
 
@@ -118,7 +118,7 @@
       
       $p_cat_desc = $_POST['p_cat_desc'];
 
-      $update_p_cat = "update product_categories set p_cat_name='$p_cat_name', p_cat_desc='$p_cat_desc' where p_cat_id='$p_cat_id'";
+      $update_p_cat = "update dlpp_product_categories set p_cat_name='$p_cat_name', p_cat_desc='$p_cat_desc' where p_cat_id='$p_cat_id'";
 
       $run_p_cat = mysqli_query($conn,$update_p_cat);
 

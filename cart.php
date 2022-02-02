@@ -5,7 +5,7 @@
 
   $session_email = $_SESSION['customer_email'];
 
-  $select_customer = "select * from customer where customer_email='$session_email'";
+  $select_customer = "select * from dlpp_customer where customer_email='$session_email'";
 
   $run_customer = mysqli_query($conn,$select_customer);
 
@@ -44,7 +44,7 @@
             
               $ip_add = getRealIpUser();
 
-              $select_cart = "select * from cart where ip_add='$ip_add'";
+              $select_cart = "select * from dlpp_cart where ip_add='$ip_add'";
 
               $run_cart = mysqli_query($conn,$select_cart);
 
@@ -83,7 +83,7 @@
 
                       $pro_qty = $row_cart['qty'];
 
-                      $get_products = "select * from products where product_id='$pro_id'";
+                      $get_products = "select * from dlpp_products where product_id='$pro_id'";
 
                       $run_products = mysqli_query($conn,$get_products);
 
@@ -184,7 +184,7 @@
 
               foreach($_POST['remove'] as $remove_id){
 
-                $delete_product = "delete from cart where p_id='$remove_id'";
+                $delete_product = "delete from dlpp_cart where p_id='$remove_id'";
 
                 $run_delete = mysqli_query($conn,$delete_product);
 
@@ -218,7 +218,7 @@
 
           <?php 
           
-            $get_products = "select * from products order by rand() LIMIT 0,3";
+            $get_products = "select * from dlpp_products order by rand() LIMIT 0,3";
 
             $run_products = mysqli_query($conn,$get_products);
 

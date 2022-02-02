@@ -71,7 +71,7 @@
           
           <?php
           
-            $get_p_cats = "select * from product_categories";
+            $get_p_cats = "select * from dlpp_product_categories";
 
             $run_p_cats = mysqli_query($conn,$get_p_cats);
 

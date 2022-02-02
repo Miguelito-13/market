@@ -2,7 +2,7 @@
 
   $customer_session = $_SESSION['customer_email'];
 
-  $get_customer = "select * from customer where customer_email='$customer_session'";
+  $get_customer = "select * from dlpp_customer where customer_email='$customer_session'";
 
   $run_customer = mysqli_query($conn,$get_customer);
 
@@ -36,7 +36,7 @@
 
   <div class="form-group"><!-- form-group Start -->
 
-    <label> Customer Name: </label>
+    <label> Customer Full Name: </label>
 
     <input type="text" class="form-control" name="c_name" value="<?php echo $customer_name; ?>" required>
 
@@ -143,7 +143,7 @@
 
     move_uploaded_file($c_image_temp,"customer_images/$c_image");
 
-    $update_customer = "update customer set customer_name='$c_name',customer_email='$c_email',customer_gender='$c_gender',customer_age='$c_age',customer_city='$c_city',customer_address='$c_address',customer_zip='$c_zip',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id'";
+    $update_customer = "update dlpp_customer set customer_name='$c_name',customer_email='$c_email',customer_gender='$c_gender',customer_age='$c_age',customer_city='$c_city',customer_address='$c_address',customer_zip='$c_zip',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id'";
 
     $run_customer = mysqli_query($conn,$update_customer);
 

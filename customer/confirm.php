@@ -4,7 +4,7 @@
 
   if(!isset($_SESSION['customer_email'])){
 
-    echo "<script>window.opn('../checkout.php','_self')</script>";
+    echo "<script>window.open('../checkout.php','_self')</script>";
 
   }else{
 
@@ -260,7 +260,7 @@
 
               <?php
               
-                $get_invoice_no = "select * from pending_orders where order_id='$order_id'";
+                $get_invoice_no = "select * from dlpp_pending_orders where order_id='$order_id'";
 
                 $run_invoice_no = mysqli_query($conn,$get_invoice_no);
 
@@ -280,7 +280,7 @@
 
               <?php
               
-                $get_due_amount = "select * from customer_orders where order_id='$order_id'";
+                $get_due_amount = "select * from dlpp_customer_orders where order_id='$order_id'";
 
                 $run_due_amount = mysqli_query($conn,$get_due_amount);
 
@@ -343,16 +343,16 @@
 
               $complete = "Complete";
 
-              $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,payment_date) 
+              $insert_payment = "insert into dlpp_payments (invoice_no,amount,payment_mode,ref_no,payment_date) 
               values ('$invoice_no','$amount','$payment_mode','$ref_no',NOW())";
 
               $run_payment = mysqli_query($conn,$insert_payment);
 
-              $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+              $update_customer_order = "update dlpp_customer_orders set order_status='$complete' where order_id='$update_id'";
 
               $run_customer_order = mysqli_query($conn,$update_customer_order);
 
-              $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+              $update_pending_order = "update dlpp_pending_orders set order_status='$complete' where order_id='$update_id'";
 
               $run_pending_order = mysqli_query($conn,$update_pending_order);
 

@@ -10,7 +10,7 @@
 
       $edit_carousel_id = $_GET['edit_slide'];
 
-      $get_carousel = "select * from carousel where carousel_id='$edit_carousel_id'";
+      $get_carousel = "select * from dlpp_carousel where carousel_id='$edit_carousel_id'";
 
       $run_edit = mysqli_query($conn,$get_carousel);
 
@@ -124,7 +124,7 @@
       
       move_uploaded_file($temp_name,"slides_images/$carousel_img");
 
-      $update_carousel = "update carousel set carousel_name='$carousel_name', carousel_img='$carousel_img' where carousel_id='$carousel_id'";
+      $update_carousel = "update dlpp_carousel set carousel_name='$carousel_name', carousel_img='$carousel_img' where carousel_id='$carousel_id'";
 
       $run_carousel = mysqli_query($conn,$update_carousel);
 

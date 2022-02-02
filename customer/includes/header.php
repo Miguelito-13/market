@@ -9,7 +9,7 @@
 
     $product_id = $_GET['pro_id'];
     
-    $get_product = "select * from products where product_id='$product_id'";
+    $get_product = "select * from dlpp_products where product_id='$product_id'";
     
     $run_product = mysqli_query($conn,$get_product);
     
@@ -29,7 +29,7 @@
     
     $pro_img3 = $row_product['product_img3'];
     
-    $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+    $get_p_cat = "select * from dlpp_product_categories where p_cat_id='$p_cat_id'";
     
     $run_p_cat = mysqli_query($conn,$get_p_cat);
     
@@ -71,7 +71,7 @@
 
               $customer_email = $_SESSION['customer_email'];
     
-              $get_customer = "select * from customer where customer_email='$customer_email'";
+              $get_customer = "select * from dlpp_customer where customer_email='$customer_email'";
               
               $run_customer = mysqli_query($conn,$get_customer);
               

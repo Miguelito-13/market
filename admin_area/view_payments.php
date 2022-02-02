@@ -66,7 +66,7 @@
 
                   $i = 0;
                 
-                  $get_payments = "select * from payments";
+                  $get_payments = "select * from dlpp_payments";
 
                   $run_payments = mysqli_query($conn,$get_payments);
 
@@ -94,7 +94,7 @@
                   <td>
                     <?php 
                   
-                      $get_customer_id = "select * from pending_orders where invoice_no='$invoice_no'";
+                      $get_customer_id = "select * from dlpp_pending_orders where invoice_no='$invoice_no'";
 
                       $run_customer_id = mysqli_query($conn,$get_customer_id);
 
@@ -102,7 +102,7 @@
 
                       $customer_id = $row_customer_id['customer_id'];
 
-                      $get_customer_name = "select * from customer where customer_id='$customer_id'";
+                      $get_customer_name = "select * from dlpp_customer where customer_id='$customer_id'";
 
                       $run_customer_name = mysqli_query($conn,$get_customer_name);
 

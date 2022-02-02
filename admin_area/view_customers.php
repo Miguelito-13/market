@@ -72,7 +72,7 @@
 
                   $i = 0;
                 
-                  $get_customer = "select * from customer";
+                  $get_customer = "select * from dlpp_customer";
 
                   $run_customer = mysqli_query($conn,$get_customer);
 
@@ -116,11 +116,11 @@
                   <td>
                     <?php 
                     
-                      $get_orders = "select * from pending_orders where customer_id='$customer_id'";
+                      $get_orders = "select * from dlpp_pending_orders where customer_id='$customer_id'";
 
                       $run_orders = mysqli_query($conn,$get_orders);
 
-                      $get_pending_orders = "select * from pending_orders where customer_id='$customer_id' AND order_status='Pending'";
+                      $get_pending_orders = "select * from dlpp_pending_orders where customer_id='$customer_id' AND order_status='Pending'";
 
                       $run_pending_orders = mysqli_query($conn,$get_pending_orders);
 
@@ -133,11 +133,11 @@
                   <td>
                     <?php 
                     
-                      $get_orders = "select * from pending_orders where customer_id='$customer_id'";
+                      $get_orders = "select * from dlpp_pending_orders where customer_id='$customer_id'";
 
                       $run_orders = mysqli_query($conn,$get_orders);
 
-                      $get_complete_orders = "select * from pending_orders where customer_id='$customer_id' AND order_status='Complete'";
+                      $get_complete_orders = "select * from dlpp_pending_orders where customer_id='$customer_id' AND order_status='Complete'";
 
                       $run_complete_orders = mysqli_query($conn,$get_complete_orders);
 

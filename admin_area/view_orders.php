@@ -67,7 +67,7 @@
 
                   $i = 0;
                 
-                  $get_pending_orders = "select * from customer_orders where order_status='Pending'";
+                  $get_pending_orders = "select * from dlpp_customer_orders where order_status='Pending'";
 
                   $run_pending_orders = mysqli_query($conn,$get_pending_orders);
 
@@ -96,7 +96,7 @@
                   <td>
                     <?php 
                   
-                      $get_pro_id = "select * from pending_orders where order_id='$order_id'";
+                      $get_pro_id = "select * from dlpp_pending_orders where order_id='$order_id'";
 
                       $run_pro_id = mysqli_query($conn,$get_pro_id);
 
@@ -104,7 +104,7 @@
 
                       $product_id = $row_pro_id['product_id'];
 
-                      $get_product = "select * from products where product_id='$product_id'";
+                      $get_product = "select * from dlpp_products where product_id='$product_id'";
 
                       $run_product = mysqli_query($conn,$get_product);
 
@@ -119,7 +119,7 @@
                   <td>
                     <?php
                     
-                      $get_customer = "select * from customer where customer_id='$customer_id'";
+                      $get_customer = "select * from dlpp_customer where customer_id='$customer_id'";
 
                       $run_customer = mysqli_query($conn,$get_customer);
 
@@ -205,7 +205,7 @@
 
                   $total = 0;
                 
-                  $get_complete_orders = "select * from customer_orders where order_status='Complete'";
+                  $get_complete_orders = "select * from dlpp_customer_orders where order_status='Complete'";
 
                   $run_complete_orders = mysqli_query($conn,$get_complete_orders);
 
@@ -236,7 +236,7 @@
                   <td>
                     <?php 
                   
-                      $get_pro_id = "select * from pending_orders where order_id='$order_id'";
+                      $get_pro_id = "select * from dlpp_pending_orders where order_id='$order_id'";
 
                       $run_pro_id = mysqli_query($conn,$get_pro_id);
 
@@ -244,7 +244,7 @@
 
                       $product_id = $row_pro_id['product_id'];
 
-                      $get_product = "select * from products where product_id='$product_id'";
+                      $get_product = "select * from dlpp_products where product_id='$product_id'";
 
                       $run_product = mysqli_query($conn,$get_product);
 
@@ -259,7 +259,7 @@
                   <td>
                     <?php
                     
-                      $get_customer = "select * from customer where customer_id='$customer_id'";
+                      $get_customer = "select * from dlpp_customer where customer_id='$customer_id'";
 
                       $run_customer = mysqli_query($conn,$get_customer);
 

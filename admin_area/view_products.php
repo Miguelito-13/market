@@ -68,7 +68,7 @@
 
                   $i = 0;
                 
-                  $get_pro = "select * from products";
+                  $get_pro = "select * from dlpp_products";
 
                   $run_pro = mysqli_query($conn,$get_pro);
 
@@ -99,7 +99,7 @@
 
                     <?php  
                     
-                      $get_sold = "select * from pending_orders where product_id='$pro_id'";
+                      $get_sold = "select * from dlpp_pending_orders where product_id='$pro_id'";
 
                       $run_sold = mysqli_query($conn,$get_sold);
 

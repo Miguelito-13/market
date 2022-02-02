@@ -10,7 +10,7 @@
 
       $edit_cat_id = $_GET['edit_cat'];
 
-      $get_cat = "select * from categories where cat_id='$edit_cat_id'";
+      $get_cat = "select * from dlpp_categories where cat_id='$edit_cat_id'";
 
       $run_edit = mysqli_query($conn,$get_cat);
 
@@ -118,7 +118,7 @@
       
       $cat_desc = $_POST['cat_desc'];
 
-      $update_cat = "update categories set cat_name='$cat_name', cat_desc='$cat_desc' where cat_id='$cat_id'";
+      $update_cat = "update dlpp_categories set cat_name='$cat_name', cat_desc='$cat_desc' where cat_id='$cat_id'";
 
       $run_cat = mysqli_query($conn,$update_cat);
 

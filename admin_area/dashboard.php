@@ -252,7 +252,7 @@
               
                 $i=0;
 
-                $get_order = "select * from pending_orders order by 1 LIMIT 0,5";
+                $get_order = "select * from dlpp_pending_orders order by 1 LIMIT 0,5";
 
                 $run_order = mysqli_query($conn,$get_order);
 
@@ -282,7 +282,7 @@
                   
                   <?php  
                   
-                    $get_customer = "select * from customer where customer_id='$c_id'";
+                    $get_customer = "select * from dlpp_customer where customer_id='$c_id'";
 
                     $run_customer = mysqli_query($conn,$get_customer);
 

@@ -45,7 +45,7 @@
               <div class='box'><!-- box Start -->
 
                 <h1>Shop</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptates rerum inventore exercitationem velit, beatae voluptatibus doloribus ea excepturi doloremque, non est. Voluptatibus provident sequi amet sunt quo. Provident, aliquam?</p>
+                <p>Browse items here!</p>
 
               </div><!-- box Finish -->
 
@@ -79,7 +79,7 @@
                   
                 $start_from = ($page-1) * $per_page;
 
-                $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
+                $get_products = "select * from dlpp_products order by 1 DESC LIMIT $start_from,$per_page";
 
                 $run_products = mysqli_query($conn,$get_products);
 
@@ -142,7 +142,7 @@
             
             <?php
 
-                  $query = "select * from products";
+                  $query = "select * from dlpp_products";
 
                   $result = mysqli_query($conn,$query);
 

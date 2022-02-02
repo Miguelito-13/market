@@ -135,7 +135,7 @@
       
       move_uploaded_file($temp_name,"admin_images/$admin_image");
      
-      $update_user = "update admins set admin_name='$admin_name', admin_email='$admin_email', admin_image='$admin_image' where admin_id='$admin_id'";
+      $update_user = "update dlpp_admins set admin_name='$admin_name', admin_email='$admin_email', admin_image='$admin_image' where admin_id='$admin_id'";
       
       $run_user = mysqli_query($conn,$update_user);
       

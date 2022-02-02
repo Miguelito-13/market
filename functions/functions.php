@@ -31,7 +31,7 @@
 
       $product_size = $_POST['product_size'];
 
-      $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
+      $check_product = "select * from dlpp_cart where ip_add='$ip_add' AND p_id='$p_id'";
 
       $run_check = mysqli_query($db,$check_product);
 
@@ -42,7 +42,7 @@
 
       }else{
 
-        $query = "insert into cart (p_id,ip_add,qty,size) values ('$p_id','$ip_add','$product_qty','$product_size')";
+        $query = "insert into dlpp_cart (p_id,ip_add,qty,size) values ('$p_id','$ip_add','$product_qty','$product_size')";
 
         $run_query = mysqli_query($db,$query);
 
@@ -59,7 +59,7 @@
     
     global $db;
     
-    $get_products = "select * from products order by 1 DESC LIMIT 0,8";
+    $get_products = "select * from dlpp_products order by 1 DESC LIMIT 0,8";
 
     $run_products = mysqli_query($db, $get_products);
 
@@ -135,7 +135,7 @@
 
     global $db;
     
-    $get_p_cats = "select * from product_categories";
+    $get_p_cats = "select * from dlpp_product_categories";
 
     $run_p_cats = mysqli_query($db, $get_p_cats);
 
@@ -163,7 +163,7 @@
 
     global $db;
     
-    $get_cats = "select * from categories";
+    $get_cats = "select * from dlpp_categories";
 
     $run_cats = mysqli_query($db, $get_cats);
 
@@ -195,7 +195,7 @@
 
       $p_cat_id = $_GET['p_cat'];
 
-      $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+      $get_p_cat = "select * from dlpp_product_categories where p_cat_id='$p_cat_id'";
 
       $run_p_cat = mysqli_query($db,$get_p_cat);
 
@@ -205,7 +205,7 @@
 
       $p_cat_desc = $row_p_cat['p_cat_desc'];
 
-      $get_products = "select * from products where p_cat_id='$p_cat_id' LIMIT 0,6";
+      $get_products = "select * from dlpp_products where p_cat_id='$p_cat_id' LIMIT 0,6";
 
       $run_products = mysqli_query($db,$get_products);
       
@@ -230,8 +230,6 @@
           <div class='box'>
           
             <h1> $p_cat_name </h1>
-
-            <p> $p_cat_desc </p>
 
           </div>
         
@@ -317,7 +315,7 @@
 
       $cat_id = $_GET['cat'];
 
-      $get_cat = "select * from categories where cat_id='$cat_id'";
+      $get_cat = "select * from dlpp_categories where cat_id='$cat_id'";
 
       $run_cat = mysqli_query($db,$get_cat);
 
@@ -327,7 +325,7 @@
 
       $cat_desc = $row_cat['cat_desc'];
 
-      $get_cat = "select * from products where cat_id='$cat_id' LIMIT 0,6";
+      $get_cat = "select * from dlpp_products where cat_id='$cat_id' LIMIT 0,6";
 
       $run_products = mysqli_query($db,$get_cat);
 
@@ -352,8 +350,6 @@
           <div class='box'>
             
             <h1> $cat_name </h1>
-
-            <p> $cat_desc </p>
         
           </div>
         
@@ -439,7 +435,7 @@
 
     $ip_add = getRealIpUser();
 
-    $get_items = "select * from cart where ip_add='$ip_add'";
+    $get_items = "select * from dlpp_cart where ip_add='$ip_add'";
 
     $run_items = mysqli_query($db,$get_items);
 
@@ -458,7 +454,7 @@
 
     $total = 0;
 
-    $select_cart = "select * from cart where ip_add='$ip_add'";
+    $select_cart = "select * from dlpp_cart where ip_add='$ip_add'";
 
     $run_cart = mysqli_query($db,$select_cart);
 
@@ -468,7 +464,7 @@
 
       $pro_qty = $record['qty'];
 
-      $get_price = "select * from products where product_id='$pro_id'";
+      $get_price = "select * from dlpp_products where product_id='$pro_id'";
 
       $run_price = mysqli_query($db,$get_price);
 

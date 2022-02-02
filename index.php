@@ -18,7 +18,7 @@
 
             $i = 1;
           
-            $get_carousel = "select * from carousel";
+            $get_carousel = "select * from dlpp_carousel";
 
             $run_carousel = mysqli_query($conn,$get_carousel);
 
@@ -44,7 +44,7 @@
                    
             <?php 
             
-              $get_slides = "select * from carousel LIMIT 0,1";
+              $get_slides = "select * from dlpp_carousel LIMIT 0,1";
               $run_slides = mysqli_query($conn,$get_slides);
               while($row_slides=mysqli_fetch_array($run_slides)){
                 $carousel_name = $row_slides['carousel_name'];
@@ -61,7 +61,7 @@
                 ";
               }
 
-              $get_slides = "select * from carousel LIMIT 1,$count_carousel";
+              $get_slides = "select * from dlpp_carousel LIMIT 1,$count_carousel";
               $run_slides = mysqli_query($conn,$get_slides);
               while($row_slides=mysqli_fetch_array($run_slides)){
                 $carousel_name = $row_slides['carousel_name'];

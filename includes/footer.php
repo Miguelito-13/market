@@ -9,7 +9,21 @@
         <h4>Pages</h4>
 
         <ul>
-          <li><a href="cart.php">Shopping Cart</a></li>
+          <li>
+            <?php 
+              
+              if(!isset($_SESSION['customer_email'])){
+
+                echo "<a href='checkout.php'> Shopping Cart </a>";
+
+              }else{
+
+                echo "<a href='cart.php'>Shopping Cart</a>";
+
+              }
+              
+            ?>
+          </li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="shop.php">Shop</a></li>
           <li><a href="customer/my_account.php">My Account</a></li>
@@ -66,7 +80,7 @@
           
           <?php
           
-            $get_p_cats = "select * from product_categories";
+            $get_p_cats = "select * from dlpp_product_categories";
 
             $run_p_cats = mysqli_query($conn,$get_p_cats);
 

@@ -182,12 +182,12 @@
 
     move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
 
-    $insert_customer = "insert into customer (customer_name,customer_email,customer_pass,customer_gender,customer_age,customer_city,customer_address,customer_zip,customer_contact,customer_image,customer_ip) 
+    $insert_customer = "insert into dlpp_customer (customer_name,customer_email,customer_pass,customer_gender,customer_age,customer_city,customer_address,customer_zip,customer_contact,customer_image,customer_ip) 
     values ('$c_name','$c_email','$c_pass','$c_gender','$c_age','$c_city','$c_address','$c_zip','$c_contact','$c_image','$c_ip')";
 
     $run_customer = mysqli_query($conn,$insert_customer);
 
-    $sel_cart = "select * from cart where ip_add='$c_ip'";
+    $sel_cart = "select * from dlpp_cart where ip_add='$c_ip'";
 
     $run_cart = mysqli_query($conn,$sel_cart);
 

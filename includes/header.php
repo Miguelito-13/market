@@ -10,7 +10,7 @@
 
     $product_id = $_GET['pro_id'];
     
-    $get_product = "select * from products where product_id='$product_id'";
+    $get_product = "select * from dlpp_products where product_id='$product_id'";
     
     $run_product = mysqli_query($conn,$get_product);
     
@@ -30,7 +30,7 @@
     
     $pro_img3 = $row_product['product_img3'];
     
-    $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+    $get_p_cat = "select * from dlpp_product_categories where p_cat_id='$p_cat_id'";
     
     $run_p_cat = mysqli_query($conn,$get_p_cat);
     
@@ -60,7 +60,7 @@
            
       <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
-        <a href="#" class="btn btn-success btn-sm">
+        <a href="index.php" class="btn btn-success btn-sm">
 
           <?php 
           
@@ -72,7 +72,7 @@
 
               $customer_email = $_SESSION['customer_email'];
     
-              $get_customer = "select * from customer where customer_email='$customer_email'";
+              $get_customer = "select * from dlpp_customer where customer_email='$customer_email'";
               
               $run_customer = mysqli_query($conn,$get_customer);
               
@@ -114,7 +114,19 @@
               ?>
           </li>
           <li>
-            <a href="cart.php">Go To Cart</a>
+            <?php 
+                
+              if(!isset($_SESSION['customer_email'])){
+
+                 echo "<a href='checkout.php'> Shopping Cart </a>";
+
+              }else{
+
+                echo "<a href='cart.php'>Shopping Cart</a>";
+
+              }
+
+            ?>
           </li>
           <li>
             <?php 
@@ -206,7 +218,7 @@
 
                 }
 
-          ?>
+              ?>
             </li>
             <li class="<?php if($active=='Contact') echo "active";?>">
               <a href="contact.php">Contact Us</a>

@@ -100,7 +100,7 @@
       
       $p_cat_desc = $_POST['p_cat_desc'];
 
-      $insert_p_cat = "insert into product_categories (p_cat_name, p_cat_desc) values ('$p_cat_name','$p_cat_desc') ";
+      $insert_p_cat = "insert into dlpp_product_categories (p_cat_name, p_cat_desc) values ('$p_cat_name','$p_cat_desc') ";
 
       $run_p_cat = mysqli_query($conn,$insert_p_cat);
 

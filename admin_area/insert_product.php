@@ -79,7 +79,7 @@
                               
                       <?php 
                               
-                        $get_p_cats = "select * from product_categories";
+                        $get_p_cats = "select * from dlpp_product_categories";
                         $run_p_cats = mysqli_query($conn,$get_p_cats);
                               
                         while ($row_p_cats=mysqli_fetch_array($run_p_cats)){                    
@@ -111,7 +111,7 @@
                               
                     <?php 
                               
-                      $get_cat = "select * from categories";
+                      $get_cat = "select * from dlpp_categories";
                       $run_cat = mysqli_query($conn,$get_cat);
                               
                       while ($row_cat=mysqli_fetch_array($run_cat)){        
@@ -255,7 +255,7 @@
       move_uploaded_file($temp_name2,"product_images/$product_img2");
       move_uploaded_file($temp_name3,"product_images/$product_img3");
       
-      $insert_product = "insert into products (p_cat_id,cat_id,date,product_name,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat',NOW(),'$product_name','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
+      $insert_product = "insert into dlpp_products (p_cat_id,cat_id,date,product_name,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat',NOW(),'$product_name','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
       
       $run_product = mysqli_query($conn,$insert_product);
       

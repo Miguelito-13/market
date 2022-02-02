@@ -147,7 +147,7 @@
       
       move_uploaded_file($temp_name,"admin_images/$admin_image");
      
-      $insert_user = "insert into admins (admin_name,admin_email,admin_pass,admin_image) values ('$admin_name','$admin_email','$admin_pass','$admin_image')";
+      $insert_user = "insert into dlpp_admins (admin_name,admin_email,admin_pass,admin_image) values ('$admin_name','$admin_email','$admin_pass','$admin_image')";
       
       $run_user = mysqli_query($conn,$insert_user);
       

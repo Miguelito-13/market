@@ -64,7 +64,7 @@
               
                 $i = 0;
 
-                $get_cats = "select * from categories";
+                $get_cats = "select * from dlpp_categories";
 
                 $run_cats = mysqli_query($conn,$get_cats);
 
