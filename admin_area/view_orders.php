@@ -155,6 +155,8 @@
 
       </div><!-- panel Finish -->
 
+      <a href="download_tables/download_pending_orders.php">Download List of Pending Orders</a>
+
     </div><!-- col-lg-12 Finish -->
 
   </div><!-- row Finish -->
@@ -299,6 +301,8 @@
         </div><!-- panel-body Finish -->
 
       </div><!-- panel Finish -->
+
+      <a href="download_tables/download_completed_orders.php">Download List of Completed Orders</a>
 
     </div><!-- col-lg-12 Finish -->
 

@@ -252,7 +252,7 @@
               
                 $i=0;
 
-                $get_order = "select * from dlpp_pending_orders order by 1 LIMIT 0,5";
+                $get_order = "select * from dlpp_pending_orders order by 1 DESC LIMIT 0,5";
 
                 $run_order = mysqli_query($conn,$get_order);
 
